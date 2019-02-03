@@ -1,15 +1,26 @@
-h1{
-    padding: 30px 0;
+h1 {
+  padding: 20px 0;
 }
 .navbar-nav {
-    width: 100%;
+  width: 100%;
 }
 .navbar-nav li {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 .hacklist {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 .row {
-    padding: 10px 0;
+  padding: 10px 0;
+}
+body {
+  background-image: url("./images/15492088593911012972938.png");
+}
+.container {
+  border: solid white;
+  border-radius: 8px;
+  background-color: white;
+}
+.containerforcontainer {
+  padding: 20px 0;
 }
