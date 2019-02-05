@@ -25,4 +25,7 @@ body {
 .containerforcontainer {
   padding: 20px 0;
 }
+.progress {
+  margin-bottom: 20px;
+}
 
