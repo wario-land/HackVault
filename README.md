@@ -5,7 +5,7 @@ The Public Code Repository of Wario Land 4's Hack Repository's Front-end.
 https://iamrifki.github.io/WarioLand4HackRepository/
 
 ## Contributors 
-* IamRifki (alt6502)
+* IamRifki
 * Kleyman
 
 ## Main Dependencies
