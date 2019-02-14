@@ -15,7 +15,7 @@ body {
   background-color: black;
   background-repeat: repeat-x;
   background-position: top;
-  background-size: auto 100%;
+  background-size: 700px;
 }
 .container {
   border: solid white;

@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <title>Wario Land 4 Hack Repository</title>
   </head>
-  <body>
+  <body onload="main()">
     <div class="containerforcontainer">
       <div class="container">
         <h1 class="text-center">Wario Land 4 Hack Repository</h1>
@@ -38,9 +39,12 @@
             </ul>
           </div>
         </nav>
+		
         <span class="border border-white">
-          <div class="shadow-sm p-3 mb-5 bg-white rounded">
-            <div class="hacklist" id="list">
+          <div class="shadow-sm p-3 mb-5 bg-white rounded" id="list">
+			<div id="list">
+            <!--<div class="hack">
+
               <div class="row">
                 <div class="col"><strong>Name of Hack</strong></div>
               </div>
@@ -128,34 +132,25 @@
                   >
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                Tags: Boss Fight, ASM Hacking, Graphics Editing
+              <div class="row">
+                  <div class="col">
+                    Tags: Boss Fight, ASM Hacking, Graphics Editing
+                  </div>
               </div>
-            </div>
-          </div>
-          <footer class="text-muted">
+            </div>-->
+			</div>
+		  </div>
+		  <footer class="text-muted">
             Code Licensed under GPLv3, Git Repository:
             https://github.com/IamRifki/WarioLand4HackRepository
           </footer>
-          <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"
-          ></script>
-          <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-            crossorigin="anonymous"
-          ></script>
-          <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-            crossorigin="anonymous"
-          ></script>
+		  </div>
+          
+        <script src="jquery-3.3.1.slim.min.js"></script>
+        <script src="popper.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="scriptForJSON.js"></script>
         </span>
-      </div>
     </div>
   </body>
 </html>
