@@ -10,9 +10,9 @@
 	"images": [ "versusKleyman.png","versusKleymanBossFight.png"],
 	"tags": "Boss Fight, ASM Hacking, Graphics Editing"
     },
-	
+
 	{
-	"name": "One Room Demo",
+	"name": "Show your skill kaizo",
 	"creator": "ssp",
 	"date": "7th February 2019",
 	"description": "A hard kaizo level",
@@ -22,7 +22,7 @@
 	"images": ["show_your_skill__kaizo.png"],
 	"tags": "Zip, Difficult, Kaizo"
     },
-	
+
 	{
 	"name": "Waamus returns",
 	"creator": "Spleen",
@@ -34,7 +34,7 @@
 	"images": ["waamus_returns.png","waamus_returns2.png"],
 	"tags": "Zip, Difficult"
     },
-	
+
 	{
 	"name": "Greedy Gulch",
 	"creator": "Vex'd",
@@ -45,7 +45,19 @@
 	"filename": "Greedy_Gulch.bps",
 	"images": ["Greedy_Gulch.png"],
 	"tags": "Time, Zip, Difficult"
-    }
-	
-	
+	},
+
+	{
+	"name": "One Room Demo",
+	"creator": "ssp",
+	"date": "15th February 2019",
+	"description": "A Single Room, note: only Normal mode is available",
+	"progress": "100",
+	"rating": "4",
+	"filename": "one_room_puzzle.bps",
+	"images": ["One_Room_Demo.2019-02-15_22.44.44.png"],
+	"tags": "Demo"
+	}
+
+
 ]
