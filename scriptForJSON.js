@@ -63,7 +63,8 @@ function loadJSON() {
 				var divDescription=document.createElement('div');
 				divDescription.className="col-sm-5";
 				divDescription.innerHTML=""//"Hack Description:";
-				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"]+'</p>';
+				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"];
+				divDescription.innerHTML+='Difficulty: <span class="badge badge-pill badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span></p>';
 				divDescription.innerHTML+='<p>'+data[i]["description"]+'</p>';
 				divCentral.appendChild(divDescription);
 				
@@ -73,10 +74,10 @@ function loadJSON() {
 					var divProgress=document.createElement('div');
 					divProgress.setAttribute('style',"height: 20px;");
 					divProgress.className="progress";
-					divProgress.innerHTML='<div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">100%</div>';
+					divProgress.innerHTML='<div class="progress-bar bg-info" role="progressbar" style="width: '+data[i]["progress"]+'%" aria-valuenow="'+data[i]["progress"]+'" aria-valuemin="0" aria-valuemax="100">'+data[i]["progress"]+'%</div>';
 					divDownload.appendChild(divProgress);
 					
-					divDownload.appendChild(document.createTextNode("Rating: "+data[i]["rating"]+"/5"));
+					divDownload.innerHTML+="<p>Rating: "+data[i]["rating"]+"/5</p>";
 					
 					var aDownload=document.createElement('a');
 					aDownload.setAttribute("id","btn-download");

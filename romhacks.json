@@ -1,51 +1,81 @@
 [
+
     {
-	"name": "VersusKleyman",
-	"creator": "Kleyman",
-	"date": "4th January 2019",
-	"description": "A graphical hack created by Kleyman, done using ASM and graphics editing",
-	"progress": "100",
-	"rating": "4",
-	"filename": "versusKleyman.ips",
-	"images": [ "versusKleyman.png","versusKleymanBossFight.png"],
-	"tags": "Boss Fight, ASM Hacking, Graphics Editing"
+        "name": "VersusKleyman",
+        "creator": "Kleyman",
+        "date": "4th January 2019",
+        "description": "A graphical hack created by Kleyman, done using ASM and graphics editing",
+        "progress": "100",
+        "rating": "4",
+        "filename": "versusKleyman.ips",
+        "images": [ "versusKleyman.png","versusKleymanBossFight.png"],
+        "tags": "Boss Fight, ASM Hacking, Graphics Editing",
+        "difficulty": "Easy"
     },
-	
-	{
-	"name": "Show your skill kaizo",
-	"creator": "ssp",
-	"date": "7th February 2019",
-	"description": "A hard kaizo level",
-	"progress": "100",
-	"rating": "4",
-	"filename": "show_your_skill__kaizo.bps",
-	"images": ["show_your_skill__kaizo.png"],
-	"tags": "Zip, Difficult, Kaizo"
+
+    {
+        "name": "Show your skill kaizo",
+        "creator": "ssp",
+        "date": "7th February 2019",
+        "description": "A hard kaizo level",
+        "progress": "100",
+        "rating": "4",
+        "filename": "show_your_skill__kaizo.bps",
+        "images": ["show_your_skill__kaizo.png"],
+        "tags": "Zip, Kaizo",
+        "difficulty": "Hard"
     },
-	
-	{
-	"name": "Waamus returns",
-	"creator": "Spleen",
-	"date": "10th February 2019",
-	"description": "",
-	"progress": "100",
-	"rating": "4",
-	"filename": "waamus_returns.bps",
-	"images": ["waamus_returns.png","waamus_returns2.png"],
-	"tags": "Zip, Difficult"
+
+        {
+        "name": "Waamus returns",
+        "creator": "Spleen",
+        "date": "10th February 2019",
+        "description": "",
+        "progress": "100",
+        "rating": "4",
+        "filename": "waamus_returns.bps",
+        "images": ["waamus_returns.png","waamus_returns2.png"],
+        "tags": "Zip",
+        "difficulty": "Hard"
     },
-	
-	{
-	"name": "Greedy Gulch",
-	"creator": "Vex'd",
-	"date": "13th February 2019",
-	"description": "A level that replaces sapphire 1",
-	"progress": "100",
-	"rating": "4",
-	"filename": "Greedy_Gulch.bps",
-	"images": ["Greedy_Gulch.png"],
-	"tags": "Time, Zip, Difficult"
+
+    {
+        "name": "Greedy Gulch",
+        "creator": "Vex'd",
+        "date": "13th February 2019",
+        "description": "A level that replaces sapphire 1",
+        "progress": "100",
+        "rating": "4",
+        "filename": "Greedy_Gulch.bps",
+        "images": ["Greedy_Gulch.png"],
+        "tags": "Time, Zip",
+        "difficulty": "Hard"
+    },
+
+    {
+        "name": "One Room Demo",
+        "creator": "ssp",
+        "date": "15th February 2019",
+        "description": "A Single Room, note: only Normal mode is available",
+        "progress": "100",
+        "rating": "4",
+        "filename": "one_room_puzzle.bps",
+        "images": ["One_Room_Demo.2019-02-15_22.44.44.png"],
+        "tags": "Demo",
+        "difficulty": "Hard"
+    },
+
+    {
+        "name": "One Room Speedrum",
+        "creator": "ssp",
+        "date": "16th February 2019",
+        "description": "A \"zipless\" easy speedrun but also fun, btw, do you really think it is \"ZIPLESS\" ????",
+        "progress": "100",
+        "rating": "4",
+        "filename": "One_Room_Speedrun_easy.bps",
+        "images": ["One_Room_Speedrun_easy.png"],
+        "tags": "Demo",
+        "difficulty": "Easy"
     }
-	
-	
+
 ]
