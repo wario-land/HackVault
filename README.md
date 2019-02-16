@@ -7,6 +7,7 @@ https://iamrifki.github.io/WarioLand4HackRepository/
 ## Contributors 
 * IamRifki
 * Kleyman
+* CM30
 
 ## Main Dependencies
 Bootstrap MIT © 2011-2018 The Bootstrap Authors, 2011-2018 Twitter, Inc.
