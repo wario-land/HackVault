@@ -63,7 +63,8 @@ function loadJSON() {
 				var divDescription=document.createElement('div');
 				divDescription.className="col-sm-5";
 				divDescription.innerHTML=""//"Hack Description:";
-				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"]+'</p>';
+				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"];
+				divDescription.innerHTML+='Difficulty: <span class="badge badge-pill badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span></p>';
 				divDescription.innerHTML+='<p>'+data[i]["description"]+'</p>';
 				divCentral.appendChild(divDescription);
 				
@@ -96,7 +97,6 @@ function loadJSON() {
 			var divTags=document.createElement('div');
 			divTags.className="row";
 			divTags.innerHTML='<div class="col">Tags: '+data[i]["tags"]+'</div>';
-			divTags.innerHTML+='<span class="badge badge-pill badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span>';
 			divHack.appendChild(divTags);
 			
 		list.appendChild(divHack);
