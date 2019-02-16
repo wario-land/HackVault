@@ -25,7 +25,7 @@ function loadJSON() {
 	var html = '';
 	for(let i=0;i<data.length;i++) {
 		var divHack=document.createElement('div');
-			divHack.className="hack";
+			divHack.className="hack shadow-sm";
 			
 			var divTitle=document.createElement('div');
 			divTitle.className="row";
