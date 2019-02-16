@@ -28,3 +28,15 @@ body {
 .progress {
   margin-bottom: 20px;
 }
+
+.badge-easy {
+  background: #1491ba;
+}
+
+.badge-medium {
+  background: #1eae1a;
+}
+
+.badge-hard {
+  background: #b70e0e;
+}

@@ -76,7 +76,7 @@ function loadJSON() {
 					divProgress.innerHTML='<div class="progress-bar bg-info" role="progressbar" style="width: '+data[i]["progress"]+'%" aria-valuenow="'+data[i]["progress"]+'" aria-valuemin="0" aria-valuemax="100">'+data[i]["progress"]+'%</div>';
 					divDownload.appendChild(divProgress);
 					
-					divDownload.appendChild(document.createTextNode("Rating: "+data[i]["rating"]+"/5"));
+					divDownload.innerHTML+="<p>Rating: "+data[i]["rating"]+"/5</p>";
 					
 					var aDownload=document.createElement('a');
 					aDownload.setAttribute("id","btn-download");
@@ -96,6 +96,7 @@ function loadJSON() {
 			var divTags=document.createElement('div');
 			divTags.className="row";
 			divTags.innerHTML='<div class="col">Tags: '+data[i]["tags"]+'</div>';
+			divTags.innerHTML+='<span class="badge badge-pill badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span>';
 			divHack.appendChild(divTags);
 			
 		list.appendChild(divHack);
