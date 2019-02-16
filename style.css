@@ -28,6 +28,8 @@ body {
 .progress {
   margin-bottom: 20px;
 }
+.navbar-toggler {
+	margin: 0 auto;
 
 .badge-easy {
   background: #1491ba;
