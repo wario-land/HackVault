@@ -131,7 +131,7 @@ function loadJSON() {
 					aDownload.setAttribute("id","btn-download");
 					if (data[i]["filename"] != "") {
 						aDownload.className="btn btn-primary float-right btn-lg";
-						aDownload.setAttribute("href","./hacks/"+data[i]["filename"]);
+						aDownload.setAttribute("href","./patches/"+data[i]["filename"]);
 					} else {
 						aDownload.setAttribute('style',"color: #fff");
 						aDownload.className="btn btn-secondary float-right btn-lg";
