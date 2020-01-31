@@ -25,6 +25,9 @@ body {
 .containerforcontainer {
   padding: 20px 0;
 }
+.blog-post {
+  padding: 0 25px;
+}
 .progress {
   margin-bottom: 20px;
 }

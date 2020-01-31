@@ -7,19 +7,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-  <title>Inserting custom midis into GBA Games | Blog des GROS F</title>
+  <title>Inserting custom MIDIs into GBA Games | Blog des GROS F</title>
   <meta name="generator" content="Jekyll v3.8.5">
-  <meta property="og:title" content="Inserting custom midis into GBA Games">
+  <meta property="og:title" content="Inserting custom MIDIs into GBA Games">
   <meta name="author" content="Kleyman">
   <meta property="og:locale" content="en_US">
   <meta name="description"
-    content="In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom midi in Wario Land 4 with loop. We will try to use cross-platform free software.">
+    content="In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom MIDI in Wario Land 4 with loop. We will try to use cross-platform free software.">
   <meta property="og:description"
-    content="In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom midi in Wario Land 4 with loop. We will try to use cross-platform free software.">
+    content="In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom MIDI in Wario Land 4 with loop. We will try to use cross-platform free software.">
   <meta property="og:type" content="article">
   <meta property="article:published_time" content="2019-05-25T00:00:00+02:00">
   <script type="application/ld+json">
-{"url":"gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html","headline":"Insert custom midi in GBA Games","dateModified":"2019-05-25T00:00:00+02:00","datePublished":"2019-05-25T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html"},"author":{"@type":"Person","name":"Kleyman"},"description":"In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom midi in Wario Land 4 with loop. We will try to use cross-platform free software.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"url":"gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html","headline":"Inserting custom MIDI in GBA Games","dateModified":"2019-05-25T00:00:00+02:00","datePublished":"2019-05-25T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html"},"author":{"@type":"Person","name":"Kleyman"},"description":"In this short tutorial I am going to show you how to insert custom music in gba games (Sappy Compatible) More precisely I will insert a custom midi in Wario Land 4 with loop. We will try to use cross-platform free software.","@type":"BlogPosting","@context":"http://schema.org"}</script>
   <!-- End Jekyll SEO tag -->
   <link rel="stylesheet" href="css/main.css">
   <link type="application/atom+xml" rel="alternate" href="feed.xml" title="Blog des GROS F">
@@ -45,8 +45,7 @@
               <a class="nav-link" href="../info.html">About <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tutorial <span
-                  class="sr-only"></span></a>
+              <a class="nav-link" href="#">Tutorial <span class="sr-only"></span></a>
             </li>
             <!--<li class="nav-item">
                     <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLScHz_4L-XtSkPinDMXEKuJipu3I_5tvn13ItSgJyz4__yQjqg/viewform?usp=sf_link">Submit a Hack <span class="sr-only">(current)</span></a>
@@ -54,224 +53,228 @@
           </ul>
         </div>
       </nav>
-      <main class="page-content" aria-label="Content">
-        <div class="wrapper">
-          <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <div class="blog-post">
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+            <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
 
-            <header class="post-header">
-              <h1 class="post-title p-name" itemprop="name headline">Inserting custom midis into GBA Games</h1>
-              <p class="post-meta">
-                <time class="dt-published" datetime="2019-05-25T00:00:00+02:00" itemprop="datePublished">May 25, 2019
-                </time>• <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span
-                    class="p-author h-card" itemprop="name">Kleyman</span></span></p>
-            </header>
+              <header class="post-header">
+                <h1 class="post-title p-name" itemprop="name headline">Inserting custom MIDIs into GBA Games</h1>
+                <p class="post-meta">
+                  <time class="dt-published" datetime="2019-05-25T00:00:00+02:00" itemprop="datePublished">May 25, 2019
+                  </time>• <span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span
+                      class="p-author h-card" itemprop="name">Kleyman</span></span></p>
+              </header>
 
-            <div class="post-content e-content" itemprop="articleBody">
-              <p>In this short tutorial I am going to show you how to insert custom music in gba games (Sappy
-                Compatible)
-                More precisely I will insert a custom midi in Wario Land 4 with looping.
-                We will try to use cross-platform free software.</p>
+              <div class="post-content e-content" itemprop="articleBody">
+                <p>In this short tutorial I am going to show you how to insert custom music in gba games (Sappy
+                  Compatible).
+                  More precisely I will insert a custom midi in Wario Land 4 with looping.
+                  We will try to use cross-platform free software.</p>
 
-              <h2 id="preparing-the-midi">Preparing the midi</h2>
+                <h2 id="preparing-the-midi">Preparing the midi</h2>
 
-              <h4 id="why-">Why?</h4>
+                <h4 id="why-">Why?</h4>
 
-              <p>Why the hell should we prepare the midi? Can’t we just insert it without touching it?
-                Well, not really…
-                Most untouched midi will sound bad in the game.
-                And it is always a plus to be able to choose instruments.</p>
+                <p>Why the hell should we prepare the midi? Can’t we just insert it without touching it?
+                  Well, not really…
+                  Most untouched midi will sound bad in the game.
+                  And it is always a plus to be able to choose instruments.</p>
 
-              <p>So let’s choose a midi file!</p>
+                <p>So let’s choose a midi file!</p>
 
-              <p>Let’s take the tune of <a href="https://freemidi.org/download3-14505-angry-birds-video-games">Angry
-                  Birds</a>!</p>
+                <p>Let’s take the tune of <a href="https://freemidi.org/download3-14505-angry-birds-video-games">Angry
+                    Birds</a>!</p>
 
-              <p>To here a more or less accurate ingame version of the midi, you might need the <a
-                  href="https://www.polyphone-soundfonts.com/en/files/27-instrument-sets/425-wario-land-4">Wario Land 4
-                  soundfont</a></p>
+                <p>To here a more or less accurate ingame version of the midi, you might need the <a
+                    href="https://www.polyphone-soundfonts.com/en/files/27-instrument-sets/425-wario-land-4">Wario Land
+                    4
+                    soundfont</a></p>
 
-              <p>The audio file plays like this with the soundfont:</p>
+                <p>The audio file plays like this with the soundfont:</p>
 
-              <audio controls="controls">
-                <source src="sounds/AngryBirdsWithSoundFont.ogg" type="audio/ogg">
-                Your browser does not support the audio tag.
-              </audio>
+                <audio controls="controls">
+                  <source src="sounds/AngryBirdsWithSoundFont.ogg" type="audio/ogg">
+                  Your browser does not support the audio tag.
+                </audio>
 
-              <p>So it doesn’t look so bad, does it?
-                And if we process the steps further without touching this midi we'll obtain this:</p>
+                <p>So it doesn’t look so bad, does it?
+                  And if we process the steps further without touching this midi we'll obtain this:</p>
 
-              <audio controls="controls">
-                <source src="sounds/AngryBirdsInGame.wav" type="audio/wav">
-                Your browser does not support the audio tag.
-              </audio>
+                <audio controls="controls">
+                  <source src="sounds/AngryBirdsInGame.wav" type="audio/wav">
+                  Your browser does not support the audio tag.
+                </audio>
 
-              <p>It is ugly as hell, isn't it? So as I say, it is more or less acurrate.
-                In the present case the instrument isn’t quite defined in the game.
-                So now you now why this step is esssential.</p>
+                <p>It is ugly as hell, isn't it? So as I say, it is more or less acurrate.
+                  In the present case the instrument isn’t quite defined in the game.
+                  So now you now why this step is essential.</p>
 
-              <h3 id="how-">How?</h3>
+                <h3 id="how-">How?</h3>
 
-              <p>We need to find an instrument that is defined and that it sound good with the current midi.
-                In our case it will be the main instrument in the Hall of Hieroglyphs level.</p>
+                <p>We need to find an instrument that is defined and that it sound good with the current midi.
+                  In our case it will be the main instrument in the Hall of Hieroglyphs level.</p>
 
-              <p>The original Hall of Hieroglyphs level music:</p>
-              <audio controls="controls">
-                <source src="sounds/HallofHieroglyph.wav" type="audio/wav">
-                Your browser does not support the audio tag.
-              </audio>
+                <p>The original Hall of Hieroglyphs level music:</p>
+                <audio controls="controls">
+                  <source src="sounds/HallofHieroglyph.wav" type="audio/wav">
+                  Your browser does not support the audio tag.
+                </audio>
 
-              <p>So how to put that main instrument in our Angry Birds song?</p>
+                <p>So how to put that main instrument in our Angry Birds song?</p>
 
-              <p>Then we need a software that enables us to quickly change between different instruments in order to
-                test
-                them quickly.
-                It must supports soundfont switching so we can put the Wario Land 4 soundfont.</p>
+                <p>Then we need a software that enables us to quickly change between different instruments in order to
+                  test
+                  them quickly.
+                  It must supports soundfont switching so we can put the Wario Land 4 soundfont.</p>
 
-              <p>In our case I chose <a href="https://musescore.org/en">MuseScore</a>.
-                A FOSS cross-platform midi editor with a nice UI. (The UI is actually quite bad, I actually can't
-                believe Kleyman likes it -IamRifki)</p>
+                <p>In our case I chose <a href="https://musescore.org/en">MuseScore</a>.
+                  A FOSS cross-platform midi editor with a nice UI. (The UI is actually quite bad, I actually can't
+                  believe Kleyman likes it - IamRifki)</p>
 
-              <p><img src="images/gba-hacking/MuseScore.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MuseScore.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>You have to put the Wario Land 4 Soundfont in the right folder
-                (C:\Users&lt;Put Your User Name&gt;\Documents\MuseScore3\SoundFonts)</p>
+                <p>You have to put the Wario Land 4 Soundfont in the right folder
+                  (C:\Users&lt;Put Your User Name&gt;\Documents\MuseScore3\SoundFonts)</p>
 
-              <p><img src="images/gba-hacking/MuseScoreSoundfont.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MuseScoreSoundfont.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Then select View -&gt; Synthesizer and select the soundfont.</p>
+                <p>Then select View -&gt; Synthesizer and select the soundfont.</p>
 
-              <p>Press F10 and select instruments.
-                Select an instrument that is likely to be used in game.
-                Don’t forget to test it.
-                In our case, it will be “Hall of Hieroglyphs”.</p>
+                <p>Press F10 and select instruments.
+                  Select an instrument that is likely to be used in game.
+                  Don’t forget to test it.
+                  In our case, it will be “Hall of Hieroglyphs”.</p>
 
-              <p><img src="images/gba-hacking/MuseScore1.png" alt="Image">
-                <img src="images/gba-hacking/MuseScore2.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MuseScore1.png" class="img-fluid" alt="Responsive image">
+                  <img src="images/gba-hacking/MuseScore2.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>One issue is that the midi export doesn’t work well.</p>
+                <p>One issue is that the midi export doesn’t work well.</p>
 
-              <p>So we are going to see what really matters, the Bank and the Program used by the instrument.</p>
+                <p>So we are going to see what really matters, the Bank and the Program used by the instrument.</p>
 
-              <p><img src="images/gba-hacking/MuseScore3.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MuseScore3.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Then we are going to use another tool: <a
-                  href="https://sourceforge.net/projects/midiquickfix/">MidiQuickFix</a>
-                You'll need java to use it.</p>
+                <p>Then we are going to use another tool: <a
+                    href="https://sourceforge.net/projects/midiquickfix/">MidiQuickFix</a>
+                  You'll need java to use it.</p>
 
-              <p>Launch it (with cmd.exe java -jar MidiQuickFix.jar)</p>
+                <p>Launch it (with cmd.exe java -jar MidiQuickFix.jar)</p>
 
-              <p><img src="images/gba-hacking/MidiQuickFix.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MidiQuickFix.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Open AngryBirds.mid and choose the Track Editor.
-                Unfortunately we can’t see the hex value of the instrument so we are going to modify the PATCH value by
-                hand.
-                In all case we need to add a bank select instruction and set it to 2 to match our instrument.</p>
+                <p>Open AngryBirds.mid and choose the Track Editor.
+                  Unfortunately we can’t see the hex value of the instrument so we are going to modify the PATCH value
+                  by
+                  hand.
+                  In all case we need to add a bank select instruction and set it to 2 to match our instrument.</p>
 
-              <p><img src="images/gba-hacking/MidiQuickFix1.png" alt="Image">
-                <img src="images/gba-hacking/MidiQuickFix2.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MidiQuickFix1.png" class="img-fluid" alt="Responsive image">
+                  <img src="images/gba-hacking/MidiQuickFix2.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>We are also going to add a loop that will work ingame.
-                You need to add 2 Markers “[” and “]” at some position in time to set the loop boundary.</p>
+                <p>We are also going to add a loop that will work ingame.
+                  You need to add 2 Markers “[” and “]” at some position in time to set the loop boundary.</p>
 
-              <p>Select Insert -&gt; Meta Event -&gt; Marker and use one of the two character.
-                Place them at different time position in the right order.</p>
+                <p>Select Insert -&gt; Meta Event -&gt; Marker and use one of the two character.
+                  Place them at different time position in the right order.</p>
 
-              <p><img src="images/gba-hacking/MidiQuickFix3.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/MidiQuickFix3.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Let’s open the midi file in a hexadecimal editor (like <a href="https://mh-nexus.de/en/hxd/">HxD</a>
-                for example)</p>
+                <p>Let’s open the midi file in a hexadecimal editor (like <a href="https://mh-nexus.de/en/hxd/">HxD</a>
+                  for example)</p>
 
-              <p>We can see the bank select instruction: “00 B0 00 02”</p>
+                <p>We can see the bank select instruction: “00 B0 00 02”</p>
 
-              <p>But what we want to do is to fit the instrument.
-                As we have seen in MuseScore the program instrument is 16 so 0x10 in hexadecimal.</p>
+                <p>But what we want to do is to fit the instrument.
+                  As we have seen in MuseScore the program instrument is 16 so 0x10 in hexadecimal.</p>
 
-              <p>We need to put it right after the C0 (or Cx with x the instrument number counting from 0)
-                Let’s change the PATCH event :
-                “00 C0 00” -&gt; “00 C0 10”</p>
+                <p>We need to put it right after the C0 (or Cx with x the instrument number counting from 0)
+                  Let’s change the PATCH event :
+                  “00 C0 00” -&gt; “00 C0 10”</p>
 
-              <p><img src="images/gba-hacking/HxD.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/HxD.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Also the Bank select instruction must be placed before the PATCH instruction to work correctly
-                So cut/paste the instruction like in the following pictures</p>
+                <p>Also the Bank select instruction must be placed before the PATCH instruction to work correctly
+                  So cut/paste the instruction like in the following pictures</p>
 
-              <p><img src="images/gba-hacking/HxD1.png" alt="Image">
-                <img src="images/gba-hacking/HxD2.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/HxD1.png" class="img-fluid" alt="Responsive image">
+                  <img src="images/gba-hacking/HxD2.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>You should get <a href="sounds/AngryBirdsModified.mid">this midi</a>.</p>
+                <p>You should get <a href="sounds/AngryBirdsModified.mid">this midi</a>.</p>
 
-              <p>We can listen the midi again in <a href="https://www.videolan.org/">VLC</a> to make sure it match the
-                instrument.
-                Select the Wario Land 4 soundfont in VLC (CTRL-P to open preferences and go to advanced option)</p>
+                <p>We can listen the midi again in <a href="https://www.videolan.org/">VLC</a> to make sure it match the
+                  instrument.
+                  Select the Wario Land 4 soundfont in VLC (CTRL-P to open preferences and go to advanced option)</p>
 
-              <p><img src="images/gba-hacking/VLC.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/VLC.png" class="img-fluid" alt="Responsive image"></p>
 
-              <audio controls="controls">
-                <source src="sounds/AngryBirdsModifiedWithSoundFont.ogg" type="audio/ogg">
-                Your browser does not support the audio tag.
-              </audio>
+                <audio controls="controls">
+                  <source src="sounds/AngryBirdsModifiedWithSoundFont.ogg" type="audio/ogg">
+                  Your browser does not support the audio tag.
+                </audio>
 
-              <p>Sound good.
-                Now let’s talk about the insertion.</p>
+                <p>Sound good.
+                  Now let’s talk about the insertion.</p>
 
-              <h2 id="insertion-of-the-midi">Insertion of the midi</h2>
+                <h2 id="insertion-of-the-midi">Insertion of the midi</h2>
 
-              <p>The easiest way is to use <a
-                  href="https://www.pokemonhacking.com/gba-hack-tools/sappy-mid2agb/">Mid2Agb
-                  and Sappy</a>.</p>
+                <p>The easiest way is to use <a
+                    href="https://www.pokemonhacking.com/gba-hack-tools/sappy-mid2agb/">Mid2Agb
+                    and Sappy</a>.</p>
 
-              <p>I will use a virtual machine to launch sappy but I won’t describe it
-                here because it takes time and it’s out of the scope of this tutorial.
-                If you're lucky enough Sappy will work out of the box in your computer, but
-                otherwise you’ll need to do the same kind of setup (Or, run compatibility mode. :p -IamRifki).</p>
+                <p>I will use a virtual machine to launch sappy but I won’t describe it
+                  here because it takes time and it’s out of the scope of this tutorial.
+                  If you're lucky enough Sappy will work out of the box in your computer, but
+                  otherwise you’ll need to do the same kind of setup (Or, run compatibility mode. :p -IamRifki).</p>
 
-              <p>If you use a virtual machine, put the rom, the midi and the sappy &amp; mid2agb installer in a
-                shared folder.
-                Extract the archive with a tool like <a href="https://www.7-zip.org/">7-Zip</a></p>
+                <p>If you use a virtual machine, put the rom, the midi and the sappy &amp; mid2agb installer in a
+                  shared folder.
+                  Extract the archive with a tool like <a href="https://www.7-zip.org/">7-Zip</a></p>
 
-              <p>Make sure your midi's filename doesn’t contain special characters,
-                Then drag and drop (or use cmd.exe) your midi to mid2agb.exe.</p>
+                <p>Make sure your midi's filename doesn’t contain special characters,
+                  Then drag and drop (or use cmd.exe) your midi to mid2agb.exe.</p>
 
-              <p><img src="images/gba-hacking/VirtualMachine.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/VirtualMachine.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>You should get an “.as” file.</p>
+                <p>You should get an “.as” file.</p>
 
-              <p>Open Sappy.
-                Select the Wario Land 4 rom.</p>
+                <p>Open Sappy.
+                  Select the Wario Land 4 rom.</p>
 
-              <p><img src="images/gba-hacking/VirtualMachine1.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/VirtualMachine1.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Select the right <a
-                  href="https://github.com/xTibor/steaks/blob/master/doc/music_and_sound_effects.md">track number</a>
-                (listen to make sure it is a good fit)
-                In our case this is 672 (0x2A0 in hexadecimal).</p>
+                <p>Select the right <a
+                    href="https://github.com/xTibor/steaks/blob/master/doc/music_and_sound_effects.md">track number</a>
+                  (listen to make sure it is a good fit)
+                  In our case this is 672 (0x2A0 in hexadecimal).</p>
 
-              <p>Select assemble song.</p>
+                <p>Select assemble song.</p>
 
-              <p><img src="images/gba-hacking/VirtualMachine2.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/VirtualMachine2.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>Select the “.as” file with the same name as your midi and press Cook it.</p>
+                <p>Select the “.as” file with the same name as your midi and press Cook it.</p>
 
-              <p><img src="images/gba-hacking/VirtualMachine3.png" alt="Image"></p>
+                <p><img src="images/gba-hacking/VirtualMachine3.png" class="img-fluid" alt="Responsive image"></p>
 
-              <p>You can listen the song again in Sappy to make sure it works.</p>
+                <p>You can listen the song again in Sappy to make sure it works.</p>
 
-              <p>Now you have successfully inserted a midi in the Wario Land 4 Rom!
-                Here is the final result:</p>
+                <p>Now you have successfully inserted a midi in the Wario Land 4 Rom!
+                  Here is the final result:</p>
 
-              <audio controls="controls">
-                <source src="sounds/AngryBirdsModifiedInGame.wav" type="audio/wav">
-                Your browser does not support the audio tag.
-              </audio>
+                <audio controls="controls">
+                  <source src="sounds/AngryBirdsModifiedInGame.wav" type="audio/wav">
+                  Your browser does not support the audio tag.
+                </audio>
 
 
 
-            </div><a class="u-url" href="gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html"
-              hidden=""></a>
-          </article>
+              </div><a class="u-url" href="gba/romhack/mod/music/midi/wl4/2019/05/25/gba-music-editing.html"
+                hidden=""></a>
+            </article>
 
-        </div>
-      </main>
+          </div>
+        </main>
+      </div>
     </div>
   </div>
 </body>
