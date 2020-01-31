@@ -1,0 +1,65 @@
+h1 {
+  padding: 20px 0;
+}
+.navbar-nav {
+  width: 100%;
+}
+.navbar-nav li {
+  padding: 0 20px;
+}
+.row {
+  padding: 10px 0;
+}
+body {
+  background-image: url("../images/background.png");
+  background-color: black;
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: 700px;
+}
+.container {
+  border: solid white;
+  border-radius: 8px;
+  background-color: white;
+}
+.containerforcontainer {
+  padding: 20px 0;
+}
+.progress {
+  margin-bottom: 20px;
+}
+.navbar-toggler {
+  margin: 0 auto;
+}
+
+.badge-easy {
+  background: #28a745;
+}
+
+.badge-medium {
+  background: #ffc107;
+}
+
+.badge-hard {
+  background: #b70e0e;
+}
+
+.image{
+  width: 240px;
+  height: 160px;
+}
+
+.video-ready{
+ height: 160px;
+ margin-left: 35px;
+ cursor: pointer;
+}
+
+.wrapper {
+ max-width: none;
+}
+
+audio {
+ width: 100%;
+}
+
