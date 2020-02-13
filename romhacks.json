@@ -278,6 +278,20 @@
         "tags": "Daily, Speedrun",
         "difficulty": "Medium"
     },
+    
+    {
+        "name": "Daily 003",
+        "creator": "ssp",
+        "date": "13th Ferbuary 2020",
+        "description": "Only Normal mode available, zipless. PS: do quick save frequently, you always have one chance in some places, and if you don't act in some correct order, the level cannot be finished also wario gets stuck",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_003.bps",
+        "videos": [],
+        "images": ["Daily_003.png"],
+        "tags": "Daily, Puzzle",
+        "difficulty": "Hard"
+    },
 
     {
         "name": "Wario Land 4 2",
