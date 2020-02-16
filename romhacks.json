@@ -287,10 +287,24 @@
         "completed": "true",
         "rating": "?",
         "filename": "Daily_003.bps",
-        "videos": [],
+        "videos": [{"type": "youtube", "id": "Um4LfTFkm_k"}],
         "images": ["Daily_003.png"],
         "tags": "Daily, Puzzle",
         "difficulty": "Hard"
+    },
+
+    {
+        "name": "Daily 004",
+        "creator": "ssp",
+        "date": "15th Ferbuary 2020",
+        "description": "Only Normal mode available, zipless (only must skill: single midair rock jump, indeed if you know how to clip into the wall, you can go everywhere you want, xD). PS: do quick save frequently, you always have one chance in some places, and if you don't act in some correct order, the level cannot be finished also wario gets stuck",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_004.bps",
+        "videos": [],
+        "images": ["Daily_004.png"],
+        "tags": "Daily, Puzzle",
+        "difficulty": "Medium"
     },
 
     {
