@@ -306,6 +306,21 @@
         "tags": "Daily, Puzzle",
         "difficulty": "Medium"
     },
+    
+    {
+        "name": "Bird Challenge",
+        "creator": "Kleyman",
+        "date": "21th Ferbuary 2020",
+        "description": "Not kaizo, require flappy bird skills",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Bird_Challenge.bps",
+        "videos": [],
+        "images": ["Bird_Challenge.png","Bird_Challenge2.png"],
+        "tags": "Secrets",
+        "difficulty": "Medium"
+    },
+
 
     {
         "name": "Wario Land 4 2",
