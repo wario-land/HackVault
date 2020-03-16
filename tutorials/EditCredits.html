@@ -78,13 +78,13 @@ An image is better than a lot of text</p>
 <p><img src="images/gba-hacking/CreditGrid.png" class="img-fluid" alt="Image" width="512px"></p>
 
 <p>The pink part can’t be seen in the game.
-There are 640 tiles. Each tile is stored in 2 bits.</p>
+There are 640 tiles. Each tile is stored in 2 bytes.</p>
 
 <p>The text in the image can be seen at offset 0x0878AECC according to the doc.</p>
 
 <p>What does that mean?</p>
 
-<p>It means that if we go to the 78AECC bit in the ROM ((in base 16) (or the 7909068th bit in decimal)
+<p>It means that if we go to the 78AECC byte in the ROM ((in base 16) (or the 7909068th byte in decimal)
 (You can use a calculator program with a hexadecimal mode)) we’ll find the stored text.</p>
 
 <p>Let’s open the ROM with a hex editor (I’ll use wxHexEditor but any other should do the trick).</p>
@@ -103,7 +103,7 @@ There are 640 tiles. Each tile is stored in 2 bits.</p>
 
 <p>Thanks to the docs we can easily decipher this: 4F 43 51 43 4E 43 46 
 43
-These 8 bits can be seen as “Prog” for programmer. The 43 between each 
+These 8 bytes can be seen as “Prog” for programmer. The 43 between each 
 character means we use the first style of writing (One Tile Writing).</p>
 
 <p>If we go further we can see: 6A 03 60 03
