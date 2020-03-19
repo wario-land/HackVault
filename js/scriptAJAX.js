@@ -6,7 +6,7 @@ function main() {
 
 	//If the markdown come from jekyll
 	var fromJekyll=false;
-	if (hashId.search("[0-9]{4}-[0-9]{2}-[0-9]{2}(.*)") != -1) {
+	if (hashId.search("^j-(.*)") != -1) {
 		fromJekyll=true;
 	}
 
@@ -33,7 +33,7 @@ function initializeAjax(markdownFile,fromJekyll) {
 function initializeMarkdown(fromJekyll) {
 
 	//Specific to jekyll
-	var title;
+	/*var title;
 	var author;
 
 	if (fromJekyll) {
@@ -41,17 +41,17 @@ function initializeMarkdown(fromJekyll) {
 
 		//Extracting stuff specific to jekyll 
 
-		/*result=markdown.match("layout: (.*)");
-		var layout=result[1];*/
+		result=markdown.match("layout: (.*)");
+		var layout=result[1];
 
 		result=markdown.match("title: \"(.*)\"");
 		title=result[1];
 
-		/*result=markdown.match("author: (.*)");
-		author=result[1];*/
+		result=markdown.match("author: (.*)");
+		author=result[1];
 
-		/*result=markdown.match("categories: (.*)");
-		var categories=result[1];*/
+		result=markdown.match("categories: (.*)");
+		var categories=result[1];
 
 		markdown=markdown.replace("---","");
 		markdown=markdown.replace(/layout: (.*)/,"");
@@ -60,7 +60,7 @@ function initializeMarkdown(fromJekyll) {
 		markdown=markdown.replace(/categories: (.*)/,"");
 		markdown=markdown.replace("---","");
 
-	}
+	}*/
 
 	var converter = new showdown.Converter();
 	html=converter.makeHtml(markdown);

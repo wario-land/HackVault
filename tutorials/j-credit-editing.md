@@ -1,9 +1,4 @@
----
-layout: post
-title: "Edit credits in Wario Land 4"
-author: Kleyman
-categories: gba romhack mod text credit wl4
----
+# Edit credits in Wario Land 4
 
 A very short tutorial to show you how to edit the credits using a hexadecimal editor (because I want WarioSpore to use a hexadecimal editor at least a little bit).
 To be honest the work is already done by HelloTibi aka xTibor.
