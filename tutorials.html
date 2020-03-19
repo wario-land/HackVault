@@ -1,59 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./css/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/style.css" />
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="Description" content="The Wario Land 4 Hack Vault">
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="./css/bootstrap.min.css" />
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>Wario Land 4 Hack Vault</title>
+    <title>Test showdown</title>
 </head>
-
 <body onload="main();">
-  <div class="containerforcontainer">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="containerforcontainer">
+    <div class="container shadow-lg">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <h1 class="nav-brand">Wario Land 4 Hack Vault</h1>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" aria-expanded="false"
-          aria-label="Toggle navigation" data-target="#navbar" aria-controls="navbar">
-          <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation" data-target="#navbar" aria-controls="navbar">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbar">
-          <ul class="navbar-nav justify-content-end d-flex flex-f">
+            <ul class="navbar-nav justify-content-end d-flex flex-f">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./info.html">About <span class="sr-only"></span></a>
+                <a class="nav-link" href="./info.html">About <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./tutorials.html">Tutorials <span class="sr-only"></span></a>
+                <a class="nav-link" href="./tutorials.html">Tutorials <span class="sr-only"></span></a>
             </li>
-            <!--<li class="nav-item">
-                  <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLScHz_4L-XtSkPinDMXEKuJipu3I_5tvn13ItSgJyz4__yQjqg/viewform?usp=sf_link">Submit a Hack <span class="sr-only">(current)</span></a>
-                </li>-->
-          </ul>
+            </ul>
         </div>
-      </nav>
+    </nav>
+    <div id="blog-post" class="blog-post">
+    </div>
+    <span class="border border-white">
 
-
-      <span class="border border-white">
+        
         <div class="list-group">
-          <a href="./tutorials/CustomMidiTutorial.html" class="list-group-item list-group-item-action">Inserting custom
-            MIDIs into GBA Games</a>
-            <a href="./tutorials/EditCredits.html" class="list-group-item list-group-item-action">Edit credits in Wario Land 4</a>
+            <a href="./tutorials.html#USER_HELPFILE.md" onclick="initializeAjax('USER_HELPFILE.md',false);" class="list-group-item list-group-item-action">User Help File</a>
+            <a href="./tutorials.html#2019-05-25-gba-music-editing.md" onclick="initializeAjax('2019-05-25-gba-music-editing.md',true);" class="list-group-item list-group-item-action">Inserting custom MIDIs into GBA Games</a>
+            <a href="./tutorials.html#2020-03-16-credit-editing.md" onclick="initializeAjax('2020-03-16-credit-editing.md',true);" class="list-group-item list-group-item-action">Edit credits in Wario Land 4</a>
         </div>
-
         <br>
-
         <footer class="text-muted">
           Code Licensed under 0BSD.
         </footer>
       </span>
     </div>
-  </div>
+    </div>
+    <script src="./js/showdown.min.js"></script>
+    <script src="./js/scriptAJAX.js"></script>
 </body>
-
-</html>
