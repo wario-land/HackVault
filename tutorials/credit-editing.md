@@ -16,7 +16,7 @@ When we read the docs, we understood that the data is stored in a different way 
 It uses tiles for the rendering.
 An image is better than a lot of text
 
-![Image](/images/gba-hacking/CreditGrid.png)
+![Image](tutorials/images/gba-hacking/CreditGrid.png)
 
 The pink part can't be seen in the game.
 There are 640 tiles. Each tile is stored in 2 bytes.
@@ -30,15 +30,15 @@ It means that if we go to the 78AECC byte in the ROM ((in base 16) (or the 79090
 
 Let's open the ROM with a hex editor (I'll use wxHexEditor but any other should do the trick).
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit.png)
 
 Use CTRL-G to go to the specified specified offset (78AECC)
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit-2.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit-2.png)
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit-3.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit-3.png)
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit-4.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit-4.png)
 
 We have now selected the interessting section.
 
@@ -49,7 +49,7 @@ If we go further we can see: 6A 03 60 03
 And then in the second block:  8A 03 80 03.
 In the two case it's the letters "KA" but written in 03 (Two Tiles Writing).
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit-5.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit-5.png)
 
 ## Let's end it
 
@@ -58,9 +58,9 @@ Now we have understood how it works, we will use the docs to credit ssp as modde
 If we translate MODDER ->  4C 4E 43 43 44 51 (with the 43)
 Same for SSP (top) -> 72 72 6F (bottom) -> 92 92 8F (with the 03)
 
-![Image](/images/gba-hacking/wxHexEditor-wl4-credit-6.png)
+![Image](tutorials/images/gba-hacking/wxHexEditor-wl4-credit-6.png)
 
-![Image](/images/gba-hacking/CreditSSP.png)
+![Image](tutorials/images/gba-hacking/CreditSSP.png)
 
 [texts.md]: https://github.com/wario-land/Toge-Docs/blob/master/Steaks/texts.md
 [hexadecimal-editor-wx]: https://sourceforge.net/projects/wxhexeditor/files/wxHexEditor/v0.24%20Beta/

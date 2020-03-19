@@ -22,7 +22,7 @@ To here a more or less accurate ingame version of the midi, you might need the [
 The audio file plays like this with the soundfont :
 
 <audio controls>
-  <source src="/sounds/AngryBirdsWithSoundFont.ogg" type="audio/ogg">
+  <source src="tutorials/sounds/AngryBirdsWithSoundFont.ogg" type="audio/ogg">
   Your browser does not support the audio tag.
 </audio>
 
@@ -30,7 +30,7 @@ So it doesn't look so bad, right ?
 And if we process the steps further without touching this midi we'll obtain this :
 
 <audio controls>
-  <source src="/sounds/AngryBirdsInGame.wav" type="audio/wav">
+  <source src="tutorials/sounds/AngryBirdsInGame.wav" type="audio/wav">
   Your browser does not support the audio tag.
 </audio>
 
@@ -44,7 +44,7 @@ In our case it will be the main instrument in Hall of Hieroglyph level.
 
 The original Hall of Hieroglyph level music :
  <audio controls>
-  <source src="/sounds/HallofHieroglyph.wav" type="audio/wav">
+  <source src="tutorials/sounds/HallofHieroglyph.wav" type="audio/wav">
   Your browser does not support the audio tag.
 </audio>
 
@@ -56,11 +56,11 @@ It must support soundfont switching so we can put the Wario Land 4 soundfont.
 In our case I choose [MuseScore][musescore].
 A FOSS cross-platform midi editor with a nice UI. (The UI is actually quite bad, I actually can't believe Kleyman likes it - IamRifki) (correction : with a nicer UI than anvil studio :P - Kleyman) 
 
-![Image](/images/gba-hacking/MuseScore.png)
+![Image](tutorials/images/gba-hacking/MuseScore.png)
 
 You have to put the Wario Land 4 Sounfont in the right folder (C:\Users\<Put Your User Name>\Documents\MuseScore3\SoundFonts)
 
-![Image](/images/gba-hacking/MuseScoreSoundfont.png
+![Image](tutorials/images/gba-hacking/MuseScoreSoundfont.png
 
 Then select View -> Synthesizer and select the soundfont.
 
@@ -71,30 +71,30 @@ Select an instrument that is likely to be used in game.
 Don't forget to test it.
 In our case, it will be "Hall of Hieroglyph".
 
-![Image](/images/gba-hacking/MuseScore1.png)
+![Image](tutorials/images/gba-hacking/MuseScore1.png)
 
-![Image](/images/gba-hacking/MuseScore2.png)
+![Image](tutorials/images/gba-hacking/MuseScore2.png)
 
 One issue is that the midi export doesn't work well.
 
 So we are going to see what really matter, the Bank and the Program used by the instrument.
 
-![Image](/images/gba-hacking/MuseScore3.png)
+![Image](tutorials/images/gba-hacking/MuseScore3.png)
 
 The we are going to use another tool : [MidiQuickFix][midi-quick-fix]
 You'll need java to use it.
 
 Launch it (with cmd.exe java -jar MidiQuickFix.jar)
 
-![Image](/images/gba-hacking/MidiQuickFix.png)
+![Image](tutorials/images/gba-hacking/MidiQuickFix.png)
 
 Open AngryBird.mid and choose Track Editor.
 Unfortunately we can't see the hex value of the instrument so we are going to modify the PATCH value by hand.
 In all case we need to add a bank select instruction and set it to 2 to match our instrument.
 
-![Image](/images/gba-hacking/MidiQuickFix1.png)
+![Image](tutorials/images/gba-hacking/MidiQuickFix1.png)
 
-![Image](/images/gba-hacking/MidiQuickFix2.png)
+![Image](tutorials/images/gba-hacking/MidiQuickFix2.png)
 
 We are also going to add a loop that will work ingame.
 You need to add 2 Markers "[" and "]" at some position in time to set the loop boundary.
@@ -102,7 +102,7 @@ You need to add 2 Markers "[" and "]" at some position in time to set the loop b
 Select Insert -> Meta Event -> Marker and use one of the two character.
 Place them at different time position in the right order.
 
-![Image](/images/gba-hacking/MidiQuickFix3.png)
+![Image](tutorials/images/gba-hacking/MidiQuickFix3.png)
 
 Let's open the midi file in a hexadecimal editor (like [HxD][hxd] for example)
 
@@ -115,24 +115,24 @@ We need to put it right after the C0 (or Cx with x the instrument number countin
 Let's change the PATCH event :
 "00 C0 00" -> "00 C0 10"
 
-![Image](/images/gba-hacking/HxD.png)
+![Image](tutorials/images/gba-hacking/HxD.png)
 
 Also the Bank select instruction must be placed before the PATCH instruction to work correctly
 So cut/paste the instruction like in the following pictures
 
-![Image](/images/gba-hacking/HxD1.png)
+![Image](tutorials/images/gba-hacking/HxD1.png)
 
-![Image](/images/gba-hacking/HxD2.png)
+![Image](tutorials/images/gba-hacking/HxD2.png)
 
 You should get [this midi][modified-midi].
 
 We can listen the midi again in [VLC][vlc] to make sure it match the instrument.
 Select the wario land 4 soundfont in VLC (CTRL-P to open preferences and go to advanced option)
 
-![Image](/images/gba-hacking/VLC.png)
+![Image](tutorials/images/gba-hacking/VLC.png)
 
 <audio controls>
-  <source src="/sounds/AngryBirdsModifiedWithSoundFont.ogg" type="audio/ogg">
+  <source src="tutorials/sounds/AngryBirdsModifiedWithSoundFont.ogg" type="audio/ogg">
   Your browser does not support the audio tag.
 </audio>
 
@@ -153,25 +153,25 @@ Extract the archive with a tool like [7-Zip][7-zip]
 Make sure your midi filename doesn't contain special characters.
 Then drag and drop (or use cmd.exe) your midi to mid2agb.exe.
 
-![Image](/images/gba-hacking/VirtualMachine.png)
+![Image](tutorials/images/gba-hacking/VirtualMachine.png)
 
 You should get a ".as" file.
 
 Open Sappy.
 Select the wario land 4 rom.
 
-![Image](/images/gba-hacking/VirtualMachine1.png)
+![Image](tutorials/images/gba-hacking/VirtualMachine1.png)
 
 Select the right [track number][tracks-info] (listen to make sure it is a good fit)
 In our case this is 672 (0x2A0 in hexadecimal).
 
 Select assemble song.
 
-![Image](/images/gba-hacking/VirtualMachine2.png)
+![Image](tutorials/images/gba-hacking/VirtualMachine2.png)
 
 Select the ".as" file with the same name as your midi and press Cook it.
 
-![Image](/images/gba-hacking/VirtualMachine3.png)
+![Image](tutorials/images/gba-hacking/VirtualMachine3.png)
 
 You can listen the song again in Sappy to make sure it works.
 
@@ -179,7 +179,7 @@ Now you have successfully inserted a midi in the Wario Land 4 Rom !
 Here is the final result :
 
 <audio controls>
-  <source src="/sounds/AngryBirdsModifiedInGame.wav" type="audio/wav">
+  <source src="tutorials/sounds/AngryBirdsModifiedInGame.wav" type="audio/wav">
   Your browser does not support the audio tag.
 </audio>
 
