@@ -1,11 +1,19 @@
 var markdown;
 
 function main() {
+	window.addEventListener("hashchange", hashChange);
+	hashChange();
+}
+
+function hashChange() {
 	var hash=window.location.hash;
 	var hashId=hash.replace("#","");
 
 	if (hashId != "") {
 		initializeAjax(hashId);
+
+	} else {
+		resetPage();
 	}
 }
 
@@ -39,4 +47,8 @@ function initializeMarkdown() {
 		images[i].setAttribute("class","img-fluid");
 	}
 
+}
+
+function resetPage() {
+	document.getElementById("blog-post").innerHTML="";
 }
