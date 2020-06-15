@@ -320,6 +320,20 @@
         "tags": "Secrets",
         "difficulty": "Medium"
     },
+
+    {
+        "name": "Daily 005",
+        "creator": "ssp",
+        "date": "15th June 2020",
+        "description": "One idea with game mechanism patches, and a usage of glitch, the others are just normal things.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_005.bps",
+        "videos": [],
+        "images": ["Daily_005.png"],
+        "tags": "Daily",
+        "difficulty": "Medium"
+    },
     
     {
         "name": "Pesky cat block tower",
