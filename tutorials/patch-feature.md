@@ -60,7 +60,7 @@ _To change the EABI binary folder in the future, edit the path in WL4Editor's IN
 
 ## Patch Manager Dialog
 
-![PatchManager](tutorials/images/patch-tutorial/PatchManager.png)
+![Image](tutorials/images/patch-tutorial/PatchManager.png)
 
 The Patch Manager Dialog allows you to add, remove, modify or re-compile patches in your ROM file. The buttons are as follows:
 
