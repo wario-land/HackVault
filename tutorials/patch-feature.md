@@ -33,6 +33,7 @@ If you only plan to use patches that other people have made, then it is a straig
 + **03000000**: RAM address mapping. All work RAM (WRAM) is of the form 03xxxxxx.
 + **08000000**: ROM address mapping. All ROM locations, when referred to by the game's own code, look as if they are of the form 08xxxxxx. The location 0x1BBFC in the actual ROM file is referred to in the game's code by the pointer 0801BBFC.
 + **Little-endian**: All multi-byte values are stored in reverse from what is considered human-readable; this is called "little-endian". So, if Wario's Y velocity is a short with value 0x1234 at 030018B0, then 030018B0 will contain 0x34, and 030018B1 will contain 0x12. Additionally, the pointer 0801BBFC would be ordered as bytes in the ROM as FC BB 01 08.
++ **ARM7TDMI**: The CPU architecture of the GBA. It is notable for having 2 execution modes: ARM (32-bit instructions) and the reduced instruction set Thumb (16-bit instructions). Most of the ROM's code is Thumb code.
 
 ---
 
@@ -222,11 +223,11 @@ void LethalDiamonds()
 
 Here is a breakdown of the above lines:
 
-**#define sub_802C848 ((void (\*)()) 0x802C849)**: Defines a function pointer to the parameterless void function located at 0802C848, called "sub_802C848" which is callable just like any other function. Note that the value is set as 0x802C84**9**, since it's pointing to a Thumb function.
+**#define sub_802C848 ((void (\*)()) 0x802C849)**: Defines a function pointer to the parameterless void function located at 0802C848, called "sub\_802C848" which is callable just like any other function. Note that the value is set as 0x802C84**9**, since it's pointing to a Thumb function.
 
-**\_\_attribute\_\_((no_caller_saved_registers))**: This tells gcc to save and restore any registers clobbered by the assembly which is compiled from your code, so that register contents are only affected minimally by your patch code.
+**\_\_attribute\_\_((no\_caller\_saved\_registers))**: This tells gcc to save and restore any registers clobbered by the assembly which is compiled from your code, so that register contents are only affected minimally by your patch code.
 
-**void LethalDiamonds()**: Your patch file should contain exactly one function, and it should match the signature of the function you're hijacking. Since sub_802C848 is a parameterless void function, so is LethalDiamonds().
+**void LethalDiamonds()**: Your patch file should contain exactly one function, and it should match the signature of the function you're hijacking. Since sub\_802C848 is a parameterless void function, so is LethalDiamonds().
 
 **sub_802C848();**: The only thing we're doing so far in our patch is calling the diamond's original behavior so that it functions properly.
 
@@ -244,7 +245,7 @@ Searching through things a bit with IDA Pro, we come across this function:
 
 ![IDA3](tutorials/images/patch-tutorial/IDA3.png)
 
-It's an int function which takes in 2 parameters; Y_tolerance is how close Wario must be to the entity vertically, and X_tolerance is how close Wario must be to the entity horizontally. If Wario does not collide, 0 is returned. If he collides from the left, 4 is returned. If he collides from the right, 8 is returned.
+It's an int function which takes in 2 parameters; Y\_tolerance is how close Wario must be to the entity vertically, and X\_tolerance is how close Wario must be to the entity horizontally. If Wario does not collide, 0 is returned. If he collides from the left, 4 is returned. If he collides from the right, 8 is returned.
 
 We can also find this function:
 
@@ -313,12 +314,12 @@ So our hook location will be 0x6C806, and we wish to use 0x6C818 - 0x6C806 = 18 
 
 ```
 .thumb
-	nop
+	.dcb 1
 	ldr r0, .DATA
 	mov lr, r0
 	ldr r0, .DATA + 4
 	bx r0
-	nop
+	.dcb 1
 .DATA:
 	.word 0x0806C819
 	.word 0xAAAAAAAA
@@ -328,7 +329,7 @@ Here is an explanation of what this code does:
 
 **.thumb**: Specify that the assembler should interpret these instructions in Thumb mode.
 
-**.dcb 1 (1)**: This adds 1 halfword filler here. The destination of the LDR instructions coming up must be word-aligned, meaning that their addresses in the ROM must be divisible by 4. Since the DATA section would otherwise be preceded by 5 instructions without this filler (instructions are 2 bytes each), the DATA section would be offset by 10 bytes in this file and thus not word-aligned. This is actually not an issue for _us_, because our hook address (0x6C806) modulo 4 is 2, so with 10 bytes the data would actually end up being aligned without this filler once the hook is placed in the ROM. But, the assembler doesn't know that, so we add this filler to simulate the initial word-misalignment we have in our hook's case. _We will take care to disregard this filler in the assembled binary_.
+**.dcb 1 (1)**: This adds 1 halfword filler here. The destination of the LDR instructions coming up must be word-aligned, meaning that the addresses in the ROM of what they are loading must be divisible by 4. Since the DATA section would otherwise be preceded by 5 instructions without this filler (instructions are 2 bytes each), the DATA section would be offset by 10 bytes in this file and thus not word-aligned. This is actually not an issue for _us_, because our hook address (0x6C806) modulo 4 is 2, so with 10 bytes the data would actually end up being aligned without this filler once the hook is placed in the ROM. But, the assembler doesn't know that, so we add this filler to simulate the initial word-misalignment we have in our hook's case. _We will take care to disregard this filler in the assembled binary_.
 
 **ldr r0, .DATA; mov lr, r0**: Load the return address (0806C818) into LR so that our patch code knows where to return to. The lowest bit specifies if it should resume execution in ARM or Thumb mode (1 = Thumb) so we write this value as 0x0806C81**9**.
 
@@ -408,22 +409,22 @@ void UnlimitedRockBouncing2()
 
 Here is an explanation of elements not already covered by example 2:
 
-**struct OAM_REC {...} / struct ENTITY_REC {...}**: We define structs for interfacing with structure arrays in RAM. These 2 structure formats are mostly known, and we only need to give names to fields which are used in our code. The rest can be padded with byte arrays.
+**struct OAM\_REC {...} / struct ENTITY\_REC {...}**: We define structs for interfacing with structure arrays in RAM. These 2 structure formats are mostly known, and we only need to give names to fields which are used in our code. The rest can be padded with byte arrays.
 
-**#define OAM ((volatile struct OAM_REC\*) 0x3000964) / #define ENTITIES (...)**: These preprocessor symbols allow us to access the OAM and Entity arrays at their location in RAM. They are marked "volatile" to ensure that the compiler does not attempt to remove any code that uses these symbols. The optimizer might try to remove that code if it cannot detect that it is being used for IO.
+**#define OAM ((volatile struct OAM\_REC\*) 0x3000964) / #define ENTITIES (...)**: These preprocessor symbols allow us to access the OAM and Entity arrays at their location in RAM. They are marked "volatile" to ensure that the compiler does not attempt to remove any code that uses these symbols. The optimizer might try to remove that code if it cannot detect that it is being used for IO.
 
-**define word_3000C3C / sub_806F838 / sub_8071A2C**: Definitions for the parts of code in the ROM which were replaced by our hook.
+**#define word\_3000C3C / sub\_806F838 / sub\_8071A2C**: Definitions for the parts of code in the ROM which were replaced by our hook.
 
-The rest should be self-explanatory. Our patch code starts with the code which was replaced by our hook (see the [marked section](tutorials/images/patch-tutorial/ThumbHook1.png)). Then, we loop through all the OAM entries to find either a rock (ID = 0x15) or Shitain-Hakase (ID = 0x80), and set its ThrownFlag property to 1. We have reached the end of the OAM entries once we get an ID of 0xFF or have looked at 24 entries, whichever comes first.
+The rest should be self-explanatory. Our patch code starts with the code which was replaced by our hook (see the [marked section](tutorials/images/patch-tutorial/ThumbHook2.png)). Then, we loop through all the OAM entries to find either a rock (ID = 0x15) or Shitain-Hakase (ID = 0x80), and set its ThrownFlag property to 1. We have reached the end of the OAM entries once we get an ID of 0xFF or have looked at 24 entries, whichever comes first.
 
-After doing all this, the rocks should bounce off each other:
+After doing all this and applying our patch, the rocks should now bounce off each other:
 
 ![BouncingRocks](tutorials/images/patch-tutorial/BouncingRocks.png)
 
 ## Additional Info
 
-**Why does the hook code use this roundabout way (loading the return address manually into LR)? Wouldn't using BL/BLX be much cleaner?** We cannot use BL because the compiler actually needs to encode the destination address as an offset partially within 2 Thumb instructions. It would not be easy to do that address replacement in WL4Editor. In theory, BLX ought to work, because [according to the documentation](http://www.keil.com/support/man/docs/armasm/armasm_dom1361289866046.htm), the return address should be placed in LR. However, in practice, LR does not appear to be updated by BLX in ARM7TDMI. We wouldn't be able to return from the patch code if we used BLX.
+**Why does the hook code use this roundabout way (loading the return address manually into LR)? Wouldn't using BL/BLX be much cleaner?** We cannot use BL because with the BL instruction, the compiler would actually need to encode the destination address as an offset partially within 2 Thumb instructions. With this, it would not be easy to do the address replacement within the hook string in WL4Editor. In theory, BLX ought to work, because [according to the documentation](http://www.keil.com/support/man/docs/armasm/armasm_dom1361289866046.htm), the return address should be placed in LR. However, in practice, LR does not appear to be updated by BLX in ARM7TDMI. Because of this issue, we wouldn't be able to return from the patch code if we used BLX.
 
 **What if my hook code is not the same size as the area I'm replacing?** The above example was really lucky because the hook code was exactly 18 bytes, which was the size of the area we were replacing. If the hook code ended up being smaller than the area we're replacing, it wouldn't really matter as long as our hardcoded return address is referencing the instruction after the area being replaced. If the hook code was larger than the area we're replacing, we'd need to expand that area we're replacing or find another location in the ROM.
 
-**Isn't LR clobbered by our hook code? How will WL4 return from the function we are patching?** The compiler is smart about knowing which registers to save on the stack, based on which ones are clobbered. If some function does not call another function (which would be called a "leaf" function) then the compiler typically would not push LR, because it's not modified by the code. If you look at the [execution flowchart](tutorials/images/patch-tutorial/ThumbHook2.png) for sub_806C794, you can see that it has successors, so it would call other functions, and we would expect that it is compiled in such a way as to save and restore LR for its own needs. Indeed, the very first instruction at 0806C794 is "PUSH {LR}". You should always check for this; _if the function you are patching is a leaf function, your hook code will need to preserve LR_.
+**Isn't LR clobbered by our hook code? How will WL4 return from the function we are patching?** The compiler is smart about knowing which registers to save on the stack, based on which ones are clobbered. If some function A does not call any other  function B (function A would be called a "leaf" function) then the compiler typically would not push LR in function A, because LR is not modified by the code. If we were to place a hook in a leaf function, then LR _would_ get clobbered. If you look at the [execution flowchart](tutorials/images/patch-tutorial/ThumbHook1.png) for sub\_806C794, you can see that it has successors, so it would call other functions, and we would expect that it is compiled in such a way as to save/restore LR for its own needs. Indeed, the very first instruction at 0806C794 is "PUSH {LR}". You should always check for this; _if the function you are patching is a leaf function, your hook code will need to preserve and restore LR by using the stack_.
