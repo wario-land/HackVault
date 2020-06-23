@@ -38,7 +38,7 @@ If you only plan to use patches that other people have made, then it is a straig
 
 ## How does it work?
 
-WL4Editor will use gcc from the ARM EABI to compile your C patch into ASM, then assemble that ASM file into an object file, then extract the binary from the object file for use in your patch. Then, WL4Editor uses the same method it typically uses for any other saving feature to find a place for your compiled patch code. Finally, it applies hooks to the ROM, and makes a master record of all patches in an RATS chunk so that patch entries can be read from your ROM or removed.
+WL4Editor will use gcc from the ARM EABI to compile your C patch into ASM, then assemble that ASM file into an object file, then extract the binary from the object file for use in your patch. Then, WL4Editor uses the same method it typically uses for any other saving feature to find a place for your compiled patch code. Finally, it applies hooks to the ROM, and makes a master record of all patches in a RATS chunk so that patch entries can be read from your ROM or removed.
 
 The hook string may contain a pointer to your patch code, denoted by the identifier "P". WL4Editor first determines the location of the patch code in RATS, and then uses those save chunk addresses to replace P with the address in RATS space. The code is compiled in Thumb mode, and these address are incremented by 1 so that execution of the patch will be initiated in Thumb mode.
 
@@ -60,7 +60,7 @@ _To change the EABI binary folder in the future, edit the path in WL4Editor's IN
 
 ## Patch Manager Dialog
 
-![Image](tutorials/images/patch-tutorial/PatchManager.png)
+![PatchManager](tutorials/images/patch-tutorial/PatchManager.png)
 
 The Patch Manager Dialog allows you to add, remove, modify or re-compile patches in your ROM file. The buttons are as follows:
 
@@ -167,7 +167,7 @@ Now, resume execution and jump. The debugger should pause:
 
 ![NoCash2](tutorials/images/patch-tutorial/NoCash2.png)
 
-All the info we need is right here. The line marked in red is the one whose execution modified the memory address 030018B0. It is storing a 16-bit value ("strh" stores 16 bits, as opposed to "strb" for 8 bits or "str" for 32 bits) which is contained in r0 (which we can see the lower 16 bits are 00B0) in to the address pointed to by r3 (03001898) indexed by 0x18 (030018B0).
+All the info we need is right here. The line marked in red is the one whose execution modified the memory address 030018B0. It is storing a 16-bit value ("strh" stores 16 bits, as opposed to "strb" for 8 bits or "str" for 32 bits) which is contained in r0 (which we can see the lower 16 bits are 00B0) into the address pointed to by r3 (03001898), indexed by 0x18 (03001898 + 0x18 = 030018B0).
 
 The source of this 00B0 value is from the instruction above, "mov r0, #0xB0". This instruction places (or "moves", hence "mov") the 8-bit value 0xB0 into r0 for the strh which comes next. So, if we modify the 0xB0 to instead be 0xFF, then Wario's initial jump velocity should be greater.
 
@@ -181,7 +181,7 @@ Now we can see that Wario jumps higher:
 
 ---
 
-## Pointer Replacement (medium)
+## Example 2: Pointer Replacement (medium)
 
 For this one, we're going to make a troll patch that kills Wario when he grabs a diamond.
 
@@ -291,10 +291,130 @@ We can see that the diamond now kills Wario:
 
 ---
 
-## Thumb Hook (hard)
+## Example 3: Thumb Hook (hard)
 
 For this one, we're going to make it so that rocks and Shitain-Hakase are always considered to be in the "thrown" state. This will allow for some neat physics tricks like bouncing off the rock multiple times.
 
 The difference with this type of hook is that the code we are hijacking is not called by a vector table, so we need to be really careful how we write and place our hook to ensure that the execution of the original code is unaffected.
 
+There are many places we could try to modify the behavior of all entities meeting some criteria; any place in the code which runs each frame during the main game loop while rooms are loaded will suffice. Here is one such location:
+
+![ThumbHook1](tutorials/images/patch-tutorial/ThumbHook1.png)
+
+![ThumbHook2](tutorials/images/patch-tutorial/ThumbHook2.png)
+
+This function should meet our needs. We will need to select some complete high-level structure in the pseudocode to replace with our hook, and replicate that structure in our code. In most cases, we will need at least 18 bytes for the hook, so some structure like an if statement usually provides enough room to work with. The section we will replace has been marked above.
+
+The marked code corresponds to this ASM:
+
+![ThumbHook3](tutorials/images/patch-tutorial/ThumbHook3.png)
+
+So our hook location will be 0x6C806, and we wish to use 0x6C818 - 0x6C806 = 18 bytes. A hook for our purposes can be assembled from this source code:
+
+```
+.thumb
+	nop
+	ldr r0, .DATA
+	mov lr, r0
+	ldr r0, .DATA + 4
+	bx r0
+	nop
+.DATA:
+	.word 0x0806C819
+	.word 0xAAAAAAAA
+```
+
+Here is an explanation of what this code does:
+
+**.thumb**: Specify that the assembler should interpret these instructions in Thumb mode.
+
+**.dcb 1 (1)**: This adds 1 halfword filler here. The destination of the LDR instructions coming up must be word-aligned, meaning that their addresses in the ROM must be divisible by 4. Since the DATA section would otherwise be preceded by 5 instructions without this filler (instructions are 2 bytes each), the DATA section would be offset by 10 bytes in this file and thus not word-aligned. This is actually not an issue for _us_, because our hook address (0x6C806) modulo 4 is 2, so with 10 bytes the data would actually end up being aligned without this filler once the hook is placed in the ROM. But, the assembler doesn't know that, so we add this filler to simulate the initial word-misalignment we have in our hook's case. _We will take care to disregard this filler in the assembled binary_.
+
+**ldr r0, .DATA; mov lr, r0**: Load the return address (0806C818) into LR so that our patch code knows where to return to. The lowest bit specifies if it should resume execution in ARM or Thumb mode (1 = Thumb) so we write this value as 0x0806C81**9**.
+
+**ldr r0, .DATA + 4; bx, r0**: Load the address of our patch and branch to it.
+
+**.dcb 1 (2)**: This filler is here because without it, the DATA section would _actually_ be misaligned. 0x6C806 + 8 = 0x6C80E, which is not divisible by 4. So, we need the section before DATA to take up 10 bytes.
+
+**.word 0x0806C819**: This is the hardcoded address we load into LR so that the patch code knows where to return when it's done executing. It is incremented by 1 to denote that execution should resume in Thumb mode (at address 0806C818).
+
+**.word 0xAAAAAAAA**: This is just a noticeable identifier we will use to replace with our patch address identifier "P" in the hook string.
+
+Let's assemble and analyze the binary from this hook:
+
+![ThumbHook4](tutorials/images/patch-tutorial/ThumbHook4.png)
+
+We will ignore the initial "0000" as that is our filler we just used for padding so the assembler would like our ASM file. The hook string is:
+
+`0248 86460248 00470000 19c80608 P`
+
+Now, we will write our C code:
+
+```
+// @Description Rocks are always in the "thrown" state
+// @HookAddress 0x6C806
+// @HookString 0248 86460248 0047c046 19c80608 P
+
+struct OAM_REC {
+    char PAD[2];
+    unsigned char EntityID;
+};
+
+#define OAM ((volatile struct OAM_REC*) 0x3000964)
+
+struct ENTITY_REC {
+    char PAD1;
+    unsigned char ThrownFlag;
+    char PAD2[0x15];
+    unsigned char EntityID;
+    char PAD3[0x14];
+};
+
+#define ENTITIES ((volatile struct ENTITY_REC*) 0x03000104)
+
+#define word_3000C3C (*(volatile short*) 0x3000C3C)
+#define sub_806F838 ((void (*)()) 0x806F839)
+
+__attribute__((no_caller_saved_registers))
+void UnlimitedRockBouncing2()
+{
+    // Substituted code
+    if (word_3000C3C == 2)
+    {
+        sub_806F838();
+    }
+
+    // Process all active entities
+    for(int i = 0; i < 24; ++i)
+    {
+        // End when the last active entity has passed
+        if (OAM[i].EntityID == 0xFF)
+        {
+            break;
+        }
+
+        // If it is a rock, set its bounce state
+        switch(ENTITIES[i].EntityID)
+        {
+            case 0x15: // Rock
+            case 0x80: // Arewo Shitain-Hakase
+            ENTITIES[i].ThrownFlag = 1;
+        }
+    }
+}
+
+```
+
+Here is an explanation of elements not already covered by example 2:
+
 TODO
+
+TODO
+
+## Additional Info
+
+**Why does the hook code use this roundabout way (loading the return address manually into LR)? Wouldn't using BL/BLX be much cleaner?** We cannot use BL because the compiler actually needs to encode the destination address as an offset partially within 2 Thumb instructions. It would not be easy to do that address replacement in WL4Editor. In theory, BLX ought to work, because [according to the documentation](http://www.keil.com/support/man/docs/armasm/armasm_dom1361289866046.htm), the return address should be placed in LR. However, in practice, LR does not appear to be updated by BLX in ARM7TDMI. We wouldn't be able to return from the patch code if we used BLX.
+
+**What if my hook code is not the same size as the area I'm replacing?** The above example was really lucky because the hook code was exactly 18 bytes, which was the size of the area we were replacing. If the hook code ended up being smaller than the area we're replacing, it wouldn't really matter as long as our hardcoded return address is referencing the instruction after the area being replaced. If the hook code was larger than the area we're replacing, we'd need to expand that area we're replacing or find another location in the ROM.
+
+**Isn't LR clobbered by our hook code? How will WL4 return from the function we are patching?** The compiler is smart about knowing which registers to save on the stack, based on which ones are clobbered. If some function does not call another function (which would be called a "leaf" function) then the compiler typically would not push LR, because it's not modified by the code. If you look at the [execution flowchart](tutorials/images/patch-tutorial/ThumbHook2.png) for sub_806C794, you can see that it has successors, so it would call other functions, and we would expect that it is compiled in such a way as to save and restore LR for its own needs. Indeed, the very first instruction at 0806C794 is "PUSH {LR}". You should always check for this; _if the function you are patching is a leaf function, your hook code will need to preserve LR_.
