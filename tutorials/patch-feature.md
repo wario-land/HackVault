@@ -374,6 +374,7 @@ struct ENTITY_REC {
 
 #define word_3000C3C (*(volatile short*) 0x3000C3C)
 #define sub_806F838 ((void (*)()) 0x806F839)
+#define sub_8071A2C ((void (*)()) 0x8071A2D)
 
 __attribute__((no_caller_saved_registers))
 void UnlimitedRockBouncing2()
@@ -383,6 +384,7 @@ void UnlimitedRockBouncing2()
     {
         sub_806F838();
     }
+    sub_8071A2C();
 
     // Process all active entities
     for(int i = 0; i < 24; ++i)
@@ -402,14 +404,21 @@ void UnlimitedRockBouncing2()
         }
     }
 }
-
 ```
 
 Here is an explanation of elements not already covered by example 2:
 
-TODO
+**struct OAM_REC {...} / struct ENTITY_REC {...}**: We define structs for interfacing with structure arrays in RAM. These 2 structure formats are mostly known, and we only need to give names to fields which are used in our code. The rest can be padded with byte arrays.
 
-TODO
+**#define OAM ((volatile struct OAM_REC\*) 0x3000964) / #define ENTITIES (...)**: These preprocessor symbols allow us to access the OAM and Entity arrays at their location in RAM. They are marked "volatile" to ensure that the compiler does not attempt to remove any code that uses these symbols. The optimizer might try to remove that code if it cannot detect that it is being used for IO.
+
+**define word_3000C3C / sub_806F838 / sub_8071A2C**: Definitions for the parts of code in the ROM which were replaced by our hook.
+
+The rest should be self-explanatory. Our patch code starts with the code which was replaced by our hook (see the [marked section](tutorials/images/patch-tutorial/ThumbHook1.png)). Then, we loop through all the OAM entries to find either a rock (ID = 0x15) or Shitain-Hakase (ID = 0x80), and set its ThrownFlag property to 1. We have reached the end of the OAM entries once we get an ID of 0xFF or have looked at 24 entries, whichever comes first.
+
+After doing all this, the rocks should bounce off each other:
+
+![BouncingRocks](tutorials/images/patch-tutorial/BouncingRocks.png)
 
 ## Additional Info
 
