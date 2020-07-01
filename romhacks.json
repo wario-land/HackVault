@@ -322,6 +322,34 @@
     },
 
     {
+        "name": "Daily 005",
+        "creator": "ssp",
+        "date": "15th June 2020",
+        "description": "One idea with game mechanism patches, and a usage of glitch, the others are just normal things.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_005.bps",
+        "videos": [],
+        "images": ["Daily_005.png"],
+        "tags": "Daily",
+        "difficulty": "Medium"
+    },
+    
+    {
+        "name": "Pesky cat block tower",
+        "creator": "Blanchon",
+        "date": "13th June 2020",
+        "description": "Single level hack (Toy Block Tower), original WL4 style although there are untypical puzzles (easy and \"hard\" ones) and it is more challenging overall. The level is also quite long and filled with secrets, it will take some time to fully explore!\n\n Decoration is not done yet for the most part (will finish it later), but the level is 100% completable.",
+        "completed": "false",
+        "rating": "?",
+        "filename": "Pesky_cat_block_tower.bps",
+        "videos": [],
+        "images": ["PeskyCatBlockTower1pic.png", "PeskyCatBlockTower2pic.png", "PeskyCatBlockTower3pic.png", "PeskyCatBlockTower4pic.png"],
+        "tags": "Casual, Puzzles, Secrets, Platforming, Single Level",
+        "difficulty": "Medium"
+    },
+
+    {
         "name": "Wario Land 4: Parallel World",
         "creator": "beco",
         "date": "20th May 2020",
@@ -333,6 +361,7 @@
         "tags": "Casual, Secrets",
         "difficulty": "Medium"
     },
+    
 
     {
         "name": "WarioLand 4 X 0.1",
