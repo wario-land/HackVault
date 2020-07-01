@@ -134,27 +134,27 @@ function loadJSON() {
 				// divRating.innerHTML+='<div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuemin="100"> Stars: '+data[i]["rating"]+ '</div>';
 				// divDownload.appendChild(divRating);
 
-					var aDownload=document.createElement('a');
-					aDownload.setAttribute("id","btn-download");
-					if (data[i]["filename"] != "") {
-						aDownload.className="btn btn-primary float-right btn-lg";
-						aDownload.setAttribute("href","./patches/"+data[i]["filename"]);
-					} else {
-						aDownload.setAttribute('style',"color: #fff");
-						aDownload.className="btn btn-secondary float-right btn-lg";
-						aDownload.setAttribute("disabled","");
-					}
+				var aDownload=document.createElement('a');
+				aDownload.setAttribute("id","btn-download");
+				if (data[i]["filename"] != "") {
+					aDownload.className="btn btn-primary float-right btn-lg";
+					aDownload.setAttribute("href","./patches/"+data[i]["filename"]);
+				} else {
+					aDownload.setAttribute('style',"color: #fff");
+					aDownload.className="btn btn-secondary float-right btn-lg";
+					aDownload.setAttribute("disabled","");
+				}
 
-					aDownload.setAttribute("role","button");
-					aDownload.innerHTML="Download";
-					divDownload.appendChild(aDownload);
-
-					// var aStar=document.createElement('a');
-					// aStar.setAttribute("id","btn-star");
-					// aStar.className="btn btn-warning float-right btn-lg mr-2";
-					// aStar.setAttribute("role","button");
-					// aStar.innerHTML="★";
-					// divDownload.appendChild(aStar);
+				aDownload.setAttribute("role","button");
+				aDownload.innerHTML="Download";
+				divDownload.appendChild(aDownload);
+				
+				// var aStar=document.createElement('a');
+				// aStar.setAttribute("id","btn-star");
+				// aStar.className="btn btn-warning float-right btn-lg mr-2";
+				// aStar.setAttribute("role","button");
+				// aStar.innerHTML="★";
+				// divDownload.appendChild(aStar);
 
 
 				divCentral.appendChild(divDownload);
