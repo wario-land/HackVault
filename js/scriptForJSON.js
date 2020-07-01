@@ -13,9 +13,9 @@ function reloadIframes() {
 
 function loadIframe(element,videoType) {
 	videoId=element.getAttribute("video-id");
-	if (videoType == "youtube") {
+	if (videoType === "youtube") {
 		element.innerHTML='<iframe width="240" height="160" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-	} else if (videoType == "bilibili") {
+	} else if (videoType === "bilibili") {
 		element.innerHTML='<iframe width="240" height="160" src="https://player.bilibili.com/player.html?aid='+videoId+'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="width: 240; height: 160px; max-width: 100%"></iframe>';
 	}
 }
@@ -68,7 +68,7 @@ function loadJSON() {
 
 						for (let j=0; j<data[i]["images"].length;j++) {
 							var divItemI=document.createElement('div');
-							if (j==0) {
+							if (j===0) {
 								divItemI.className="carousel-item active";
 							} else {
 								divItemI.className="carousel-item";
@@ -79,16 +79,16 @@ function loadJSON() {
 
 						for (let j=0; j<data[i]["videos"].length;j++) {
 							var divItemI=document.createElement('div');
-							if (j==0 && data[i]["images"].length == 0) {
+							if (j===0 && data[i]["images"].length === 0) {
 								divItemI.className="carousel-item active";
 							} else {
 								divItemI.className="carousel-item";
 							}
 							divItemI.setAttribute("video-id",data[i]["videos"][j]["id"]);
 							divItemI.innerHTML='<img class="video-ready" src="./images/play.png" class="d-block image" alt="play.png"/>';
-							if (data[i]["videos"][j]["type"] == "youtube") {
+							if (data[i]["videos"][j]["type"] === "youtube") {
 								divItemI.setAttribute("onclick",'loadIframe(this,"youtube")');
-							} else if (data[i]["videos"][j]["type"] == "bilibili") {
+							} else if (data[i]["videos"][j]["type"] === "bilibili") {
 								divItemI.setAttribute("onclick",'loadIframe(this,"bilibili")');
 							}
 							divCarouselInner.appendChild(divItemI);
@@ -105,27 +105,34 @@ function loadJSON() {
 				divDescription.className="col-sm-5";
 				divDescription.innerHTML=""/* "Hack Description:" */;
 				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"];
-				divDescription.innerHTML+='Difficulty: <span class="badge badge-pill badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span></p>';
+				divDescription.innerHTML+='Difficulty: <span class="badge badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span></p>';
+				if (data[i]["completed"] === "true") {
+					divDescription.innerHTML+='<p> Status: <span class="badge bg-success">Completed</span></p>';
+				} else {
+					divDescription.innerHTML+='<p> Status: <span class="badge bg-secondary">WIP</span></p>';
+				}
 				divDescription.innerHTML+='<p>'+data[i]["description"]+'</p>';
+
 				divCentral.appendChild(divDescription);
+				
 
 				var divDownload=document.createElement('div');
 				divDownload.className="col-sm-4";
-					var divProgress=document.createElement('div');
-					divProgress.setAttribute('style',"height: 20px;");
-					divProgress.className="progress";
-					if (data[i]["completed"] == "true") {
-						divProgress.innerHTML='<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuemin="0" aria-valuemax="100">Status: Completed'+'</div>';
-						divDownload.appendChild(divProgress);
-					} else {
-						divProgress.innerHTML='<div class="progress-bar bg-secondary" role="progressbar" style="width: 100%" aria-valuemin="0" aria-valuemax="100">Status: WIP'+'</div>';
-						divDownload.appendChild(divProgress);
-					}
-					var divRating=document.createElement('div');
-					divRating.setAttribute('style',"height: 20px;");
-					divRating.className="progress";
-					divRating.innerHTML+='<div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuemin="100"> Stars: '+data[i]["rating"]+ '</div>';
-					divDownload.appendChild(divRating);
+				// 	var divProgress=document.createElement('div');
+				// 	divProgress.setAttribute('style',"height: 20px;");
+				// 	divProgress.className="progress";
+				// 	if (data[i]["completed"] === "true") {
+				// 		divProgress.innerHTML='<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuemin="0" aria-valuemax="100">Status: Completed'+'</div>';
+				// 		divDownload.appendChild(divProgress);
+				// 	} else {
+				// 		divProgress.innerHTML='<div class="progress-bar bg-secondary" role="progressbar" style="width: 100%" aria-valuemin="0" aria-valuemax="100">Status: WIP'+'</div>';
+				// 		divDownload.appendChild(divProgress);
+				// 	}
+				// var divRating=document.createElement('div');
+				// divRating.setAttribute('style',"height: 20px;");
+				// divRating.className="progress";
+				// divRating.innerHTML+='<div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuemin="100"> Stars: '+data[i]["rating"]+ '</div>';
+				// divDownload.appendChild(divRating);
 
 					var aDownload=document.createElement('a');
 					aDownload.setAttribute("id","btn-download");
@@ -142,12 +149,12 @@ function loadJSON() {
 					aDownload.innerHTML="Download";
 					divDownload.appendChild(aDownload);
 
-					var aStar=document.createElement('a');
-					aStar.setAttribute("id","btn-star");
-					aStar.className="btn btn-warning float-right btn-lg mr-2";
-					aStar.setAttribute("role","button");
-					aStar.innerHTML="★";
-					divDownload.appendChild(aStar);
+					// var aStar=document.createElement('a');
+					// aStar.setAttribute("id","btn-star");
+					// aStar.className="btn btn-warning float-right btn-lg mr-2";
+					// aStar.setAttribute("role","button");
+					// aStar.innerHTML="★";
+					// divDownload.appendChild(aStar);
 
 
 				divCentral.appendChild(divDownload);
@@ -161,7 +168,6 @@ function loadJSON() {
 			divHack.appendChild(divTags);
 
 		list.appendChild(divHack);
-		new Carousel(divCarouselControls);
 	}
 }
 
