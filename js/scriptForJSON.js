@@ -149,11 +149,12 @@ function loadJSON() {
 				aDownload.innerHTML="Download";
 				divDownload.appendChild(aDownload);
 				
+				/* Uncomment this block to enable Star buttons. */
 				// var aStar=document.createElement('a');
 				// aStar.setAttribute("id","btn-star");
 				// aStar.className="btn btn-warning float-right btn-lg mr-2";
 				// aStar.setAttribute("role","button");
-				// aStar.innerHTML="★";
+				// aStar.innerHTML="★ <span class=\"badge bg-secondary\">"+data[i]["rating"]+"</span>";
 				// divDownload.appendChild(aStar);
 
 
