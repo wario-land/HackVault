@@ -105,11 +105,11 @@ function loadJSON() {
 				divDescription.className="col-sm-5";
 				divDescription.innerHTML=""/* "Hack Description:" */;
 				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"];
-				divDescription.innerHTML+='Difficulty: <span class="badge badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span></p>';
+				divDescription.innerHTML+='Difficulty: <span class="badge badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span><br>';
 				if (data[i]["completed"] === "true") {
-					divDescription.innerHTML+='<p> Status: <span class="badge bg-success">Completed</span></p>';
+					divDescription.innerHTML+='Status: <span class="badge bg-success">Completed</span></p>';
 				} else {
-					divDescription.innerHTML+='<p> Status: <span class="badge bg-secondary">WIP</span></p>';
+					divDescription.innerHTML+='Status: <span class="badge bg-secondary">WIP</span></p>';
 				}
 				divDescription.innerHTML+='<p>'+data[i]["description"]+'</p>';
 
