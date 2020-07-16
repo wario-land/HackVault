@@ -350,6 +350,20 @@
     },
 
     {
+        "name": "Hollow Wario",
+        "creator": "ssp",
+        "date": "16th July 2020",
+        "description": "the release version of Hollow Wario, only the Normal mode is available. first Level completed. Idk if i will going to add new levels to this hack but i don't have idea for a long time.",
+        "completed": "false",
+        "rating": "?",
+        "filename": "HW.bps",
+        "videos": [],
+        "images": ["HW1pic.png"],
+        "tags": "Zipless, Kaizo, Puzzle",
+        "difficulty": "Hard"
+    },
+
+    {
         "name": "Wario Land 4: Parallel World",
         "creator": "beco",
         "date": "20th May 2020",
