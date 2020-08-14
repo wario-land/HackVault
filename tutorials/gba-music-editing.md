@@ -17,7 +17,7 @@ So let's choose a midi file !
 
 Let's take the tune of [angry bird][angry-bird-midi] !
 
-To here a more or less accurate ingame version of the midi, you might need the [wario land 4 soundfont][wl4-soundfont]
+To here a more or less accurate ingame version of the midi, you might need the wario land 4 soundfont.
 
 The audio file plays like this with the soundfont :
 
@@ -185,12 +185,11 @@ Here is the final result :
 
 
 [angry-bird-midi]: https://freemidi.org/download3-14505-angry-birds-video-games
-[wl4-soundfont]: https://www.polyphone-soundfonts.com/en/files/27-instrument-sets/425-wario-land-4
 [musescore]: https://musescore.org/en
 [midi-quick-fix]: https://sourceforge.net/projects/midiquickfix/
 [hxd]: https://mh-nexus.de/en/hxd/
 [vlc]: https://www.videolan.org/
-[modified-midi]: /sounds/AngryBirdsModified.mid
+[modified-midi]: tutorials/sounds/AngryBirdsModified.mid
 [sappy-and-mid2agb]: https://www.pokemonhacking.com/gba-hack-tools/sappy-mid2agb/
 [7-zip]: https://www.7-zip.org/
-[tracks-info]: https://github.com/xTibor/steaks/blob/master/doc/music_and_sound_effects.md
+[tracks-info]: https://github.com/wario-land/Toge-Docs/blob/master/Steaks/music_and_sound_effects.md
