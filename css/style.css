@@ -68,3 +68,9 @@ audio {
  width: 100%;
 }
 
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    white-space: normal;
+  }
+}
+
