@@ -55,10 +55,10 @@ function loadJSON() {
 			var divCentral=document.createElement('div');
 			divCentral.className="row";
 				var divCarousel=document.createElement('div');
-				divCarousel.className="col-sm-3";
+				divCarousel.className="col-sm";
 					var divCarouselControls=document.createElement('div');
 					divCarouselControls.setAttribute("id","carouselExampleControls-i"+i);
-					divCarouselControls.className="carousel slide";
+					divCarouselControls.className="image carousel slide";
 					divCarouselControls.setAttribute("data-ride","carousel");
 
 					// Disable cycling because of videos
