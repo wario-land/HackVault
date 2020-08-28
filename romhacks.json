@@ -391,6 +391,33 @@
         "difficulty": "Easy"
     },
 
+    {
+        "name": "WarioLand 4 X 0.1",
+        "creator": "violetyosh",
+        "date": "27th Ferbuary 2020",
+        "description": "It's basically trying to make warioland 4 more challenging, but not unfair. Tutorial edited and the update contains: Spoiled Rotten X and PalmTree Paradise X",
+        "completed": "false",
+        "rating": "?",
+        "filename": "WarioLand_4_X_-_Palm_Tree_Paradise_X_Update_-.bps",
+        "videos": [],
+        "images": ["Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_1.png","Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_2.png","Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_3.png"],
+        "tags": "Secrets",
+        "difficulty": "Easy"
+    },
+
+    {
+        "name": "Wario_Land_Liszt132",
+        "creator": "liszt132",
+        "date": "27th August 2020",
+        "description": "",
+        "completed": "false",
+        "rating": "?",
+        "filename": "Wario_Land_Liszt132.bps",
+        "videos": [],
+        "images": ["Wario_Land_Liszt132-0.png","Wario_Land_Liszt132-1.png"],
+        "tags": "Secrets",
+        "difficulty": "Easy"
+    },
 
     {
         "name": "Wario Land 4 2",
