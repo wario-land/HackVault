@@ -405,16 +405,31 @@
         "difficulty": "Easy"
     },
 
-        {
+    {
         "name": "Wario Land 4: Parallel World v0.71",
         "creator": "beco",
         "date": "30th November 2020",
         "description": "This hack's one of the concepts is \"another WL4\".\n Most of level concepts and difficulty shouldn't be too different from the original... (but more secrets?)\n Now Entry, Emerald, Sapphire and Ruby passages are fully edited.. I hope you enjoy it!",
+	"completed": "false",
         "rating": "?",
         "filename": "Wario_Land_4_Parallel_World_ver0.71.zip",
         "videos": [{"type": "youtube", "id": "0IdnKYS-1y4"}],
         "images": ["warioland-parallelworld-1.png", "warioland-parallelworld-2.png", "warioland-parallelworld-3.png", "warioland-parallelworld-4.png"],
         "tags": "Casual, Secrets",
+        "difficulty": "Medium"
+    },
+
+    {
+        "name": "WL4 Time Attack Edition ver1.1",
+        "creator": "beco",
+        "date": "13th December 2020",
+        "description": "[Features]<br> Timer is always on top-right of screen in level (replaced coin display)<br>* For now, timer doesn't include lag frames (v1.1)<br>* For now, not supporting boss levels (v1.1)<br>* Insta-death when run out of the frog timer due to coin display replacement<br>- Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* To clear all best times, hold L+R when boot the game<br>- Retry current level from pause menu<br>- Change difficulty (press SELECT in the passage screen)<br>- Shorter cutscenes",
+	"completed": "true",
+        "rating": "?",
+        "filename": "Wario_Land_4_TimeAttack_Edition_ver1.1.zip",
+        "videos": [],
+        "images": ["WL4_TimeAttackEdition_v1.1.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
+        "tags": "Time, Speedrun",
         "difficulty": "Medium"
     }
     
