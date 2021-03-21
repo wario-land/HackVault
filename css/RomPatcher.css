@@ -1,13 +1,8 @@
 /* WebApps CSS template by Marc Robledo v20190531 */
 /* minify at https://cssminifier.com/ + https://www.base64-image.de/ */
 
-/* @FONT-FACES */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300);
-
 body{
 	margin:0;
-	font:15px 'Open Sans',sans-serif;
 	cursor:default;
 	line-height:1.8;
 	background-color:#31343a;
@@ -101,7 +96,7 @@ hr{border:none;border-top:1px dotted #bbb;margin:15px 0}
 #switch-container{
 	visibility:hidden;
 	text-align:right;
-	color:white;
+	color:black;
 	margin-bottom:10px;
 	font-size:88%;
 }
@@ -109,9 +104,11 @@ hr{border:none;border-top:1px dotted #bbb;margin:15px 0}
 	border-radius:2px;
 	padding: 6px 8px;
 	transition:background-color .1s;
+	background-color: white;
+	border-radius: 3px;
 }
 #switch-create-button:hover{
-	background-color:#2b2e33;
+	background-color:#dee1e1;
 	cursor:pointer;
 }
 .switch{
@@ -177,7 +174,7 @@ select{
 	background-repeat:no-repeat;
 }
 select::-ms-expand{display:none}
-input[type=file].enabled:hover,select.enabled:hover{background-color:#dee1e1}
+input[type=file].enabled:hover,select.enabled:hover{background-color:#dee1e1;}
 input[type=file].disabled,select.disabled{background-color:transparent}
 
 
