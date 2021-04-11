@@ -443,11 +443,22 @@
         "filename": "wl4_cbm.bps",
         "videos": [],
         "images": ["CBM-pic01.png","CBM-pic02.png","CBM-pic03.png"],
-        "tags": "Casual, Puzzles, Secrets, Platforming, Single Level",
+        "tags": "Casual, Puzzles, Secrets, Platforming, Single Level, Custom Blocks",
+        "difficulty": "Medium"
+    },
+
+    {
+        "name": "<a href=https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/custom%20block%20fun>CustomBlockFun v1.0</a>",
+        "creator": "ssp",
+        "date": "11th April 2021",
+        "description": "A single-level hack, only normal mode available, i didn't look into the method to disable difficulty selecting, so just don't choose other difficulty",
+        "completed": "true",
+        "rating": "?",
+        "filename": "CustomBlockFun_v1.0.bps",
+        "videos": [],
+        "images": ["CBF-pic01.png"],
+        "tags": "Casual, Puzzles, Secrets, Platforming, Single Level, Custom Blocks",
         "difficulty": "Medium"
     }
-
-    
-    
 
 ]
