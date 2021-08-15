@@ -459,6 +459,20 @@
         "images": ["CBF-pic01.png"],
         "tags": "Casual, Puzzles, Secrets, Platforming, Single Level, Custom Blocks",
         "difficulty": "Medium"
+    },
+
+    {
+        "name": "Daily 006",
+        "creator": "ssp",
+        "date": "13th August 2021",
+        "description": "One level hack, only Normal mode available, zipless. PS: quick save frequently, you always have one chance in some places",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_006.bps",
+        "videos": [],
+        "images": ["Daily_006.png"],
+        "tags": "Daily, Puzzle",
+        "difficulty": "Medium"
     }
 
 ]
