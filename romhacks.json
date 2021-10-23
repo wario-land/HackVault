@@ -406,13 +406,13 @@
     },
 
     {
-        "name": "<a href=\"https://github.com/becored/WL4_PW\">Wario Land 4: Parallel World v0.71</a>",
+        "name": "<a href=\"https://github.com/becored/WL4_PW\">Wario Land 4: Parallel World v1.03</a>",
         "creator": "beco",
         "date": "30th November 2020",
-        "description": "This hack's one of the concepts is \"another WL4\".\n Most of level concepts and difficulty shouldn't be too different from the original... (but more secrets?)\n Now Entry, Emerald, Sapphire and Ruby passages are fully edited.. I hope you enjoy it!",
-        "completed": "false",
+        "description": "This is a complete rom hack of Wario Land 4 that I've worked on January 2020 - August 2021.",
+        "completed": "true",
         "rating": "?",
-        "filename": "Wario_Land_4_Parallel_World_ver0.71.zip",
+        "filename": "Wario_Land_4_Parallel_World_ver1.03.zip",
         "videos": [{"type": "youtube", "id": "0IdnKYS-1y4"}],
         "images": ["warioland-parallelworld-1.png", "warioland-parallelworld-2.png", "warioland-parallelworld-3.png", "warioland-parallelworld-4.png"],
         "tags": "Casual, Secrets",
@@ -420,15 +420,15 @@
     },
 
     {
-        "name": "<a href=\"https://github.com/becored/WL4_TA\">Time Attack Edition ver1.2</a>",
+        "name": "<a href=\"https://github.com/becored/WL4_TA\">Time Attack Edition ver1.4</a>",
         "creator": "beco",
         "date": "14th December 2020",
-        "description": "[Features]<br> Bug fixed: restore the frog timer for level retry (v1.2)<br>* Bug fixed: stable best time update (v1.2)<br>* Timer is always on top-right of screen in level (replaced coin display)<br>* For now, timer doesn't include lag frames (v1.1)<br>* For now, not supporting boss levels (v1.1)<br>* Insta-death when run out of the frog timer due to coin display replacement<br>- Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* To clear all best times, hold L+R when boot the game<br>- Retry current level from pause menu<br>- Change difficulty (press SELECT in the passage screen)<br>- Shorter cutscenes",
+        "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br> - Timer doesn't include lag frames<br>* For now, not supporting boss levels<br> - Insta-death when run out of the frog timer due to coin display replacement<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
         "completed": "true",
         "rating": "?",
-        "filename": "Wario_Land_4_TimeAttack_Edition_ver1.2.zip",
+        "filename": "Wario_Land_4_TimeAttack_Edition_ver1.4.zip",
         "videos": [],
-        "images": ["WL4_TimeAttackEdition_v1.2.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
+        "images": ["WL4_TimeAttackEdition_v1.4.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
         "tags": "Time, Speedrun",
         "difficulty": "Medium"
     },
