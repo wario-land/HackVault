@@ -2,7 +2,8 @@
     {
         "name": "VersusKleyman",
         "creator": "Kleyman",
-        "date": "4th January 2019",
+        "date": 1546556400000,
+        "lastchange": 1546556400000,
         "description": "A graphical hack created by Kleyman, done using ASM and graphics editing",
         "completed": "true",
         "rating": "?",
@@ -10,13 +11,15 @@
         "videos": [],
         "images": [ "versusKleyman.png","versusKleymanBossFight.png"],
         "tags": "Boss Fight, ASM Hacking, Graphics Editing",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "Show your skill kaizo",
         "creator": "ssp",
-        "date": "7th February 2019",
+        "date": 1549494000000,
+        "lastchange": 1549494000000,
         "description": "A hard kaizo level",
         "completed": "true",
         "rating": "?",
@@ -24,13 +27,15 @@
         "videos": [{"type": "bilibili", "id": "42982137"}],
         "images": ["show_your_skill__kaizo.png"],
         "tags": "Zip, Kaizo",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "Waamus returns again",
         "creator": "Spleen",
-        "date": "10th February 2019",
+        "date": 1549753200000,
+        "lastchange": 1549753200000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -38,13 +43,15 @@
         "videos": [],
         "images": ["waamus_returns.png","waamus_returns2.png"],
         "tags": "Zip",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "Greedy Gulch",
         "creator": "Vex'd",
-        "date": "13th February 2019",
+        "date": 1550012400000,
+        "lastchange": 1550012400000,
         "description": "A level that replaces sapphire 1",
         "completed": "true",
         "rating": "?",
@@ -52,13 +59,15 @@
         "videos": [],
         "images": ["Greedy_Gulch.png"],
         "tags": "Time, Zip",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "One Room Demo",
         "creator": "ssp",
-        "date": "15th February 2019",
+        "date": 1550185200000,
+        "lastchange": 1550185200000,
         "description": "A Single Room, note: only Normal mode is available",
         "completed": "true",
         "rating": "?",
@@ -66,13 +75,15 @@
         "videos": [],
         "images": ["One_Room_Demo.2019-02-15_22.44.44.png"],
         "tags": "Demo",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "One Room Speedrun",
         "creator": "ssp",
-        "date": "16th February 2019",
+        "date": 1550271600000,
+        "lastchange": 1550271600000,
         "description": "A \"zipless\" easy speedrun but also fun, btw, do you really think it is \"ZIPLESS\" ????",
         "completed": "true",
         "rating": "?",
@@ -80,13 +91,15 @@
         "videos": [{"type": "youtube", "id": "eA2tCj0Wqm0"}],
         "images": ["One_Room_Speedrun_easy.png"],
         "tags": "Demo",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "minewaahft",
         "creator": "Vex'd",
-        "date": "17th February 2019",
+        "date": 1550358000000,
+        "lastchange": 1550358000000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -94,13 +107,15 @@
         "videos": [],
         "images": ["minewaahft.png"],
         "tags": "Minecraft",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "waandertale",
         "creator": "Vex'd",
-        "date": "18th February 2019",
+        "date": 1550444400000,
+        "lastchange": 1550444400000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -108,13 +123,15 @@
         "videos": [],
         "images": ["waandertale1.png", "waandertale2.png"],
         "tags": "Undertale, RPG",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "waapsy turby",
         "creator": "Vex'd",
-        "date": "18th February 2019",
+        "date": 1550444400000,
+        "lastchange": 1550444400000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -122,13 +139,15 @@
         "videos": [],
         "images": ["waapsy_turby.png"],
         "tags": "Puzzle",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "waamazeing waadventure",
         "creator": "Vex'd",
-        "date": "19th February 2019",
+        "date": 1550530800000,
+        "lastchange": 1550530800000,
         "description": "A 20x20 maze, a 30x30 maze, and finally, a 40x40 maze. It's possible to get all four treasure pieces and Keyzer, and there are no softlocks. I think I've played through 7 times trying to find softlocks, it would have been better if I hadn't used a tileset without frog blocks for the first maze",
         "completed": "true",
         "rating": "?",
@@ -136,13 +155,15 @@
         "videos": [],
         "images": ["waamazeing_waadventure.png"],
         "tags": "Puzzle, Maze",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "wario on a roll",
         "creator": "Vex'd",
-        "date": "19th February 2019",
+        "date": 1550530800000,
+        "lastchange": 1550530800000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -150,13 +171,15 @@
         "videos": [],
         "images": ["wario_on_a_roll.png"],
         "tags": "Roll",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "Hieroglyphs Vol 2",
         "creator": "Orange_Themes [GMT]",
-        "date": "19th February 2019",
+        "date": 1550530800000,
+        "lastchange": 1550530800000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -164,13 +187,15 @@
         "videos": [],
         "images": ["Hieroglyphs_Vol_2.png"],
         "tags": "Classic",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "Chaos Kaizo Land",
         "creator": "ssp",
-        "date": "26th February 2019",
+        "date": 1551135600000,
+        "lastchange": 1551135600000,
         "description": "A really hard kaizo level, only Normal Mode is available, use savestates as frequently as possible.",
         "completed": "true",
         "rating": "?",
@@ -178,13 +203,15 @@
         "videos": [],
         "images": ["ChaosKaizoLand1.png", "ChaosKaizoLand2.png"],
         "tags": "Kaizo",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "Waasyphus",
         "creator": "Vex'd",
-        "date": "27th February 2019",
+        "date": 1551222000000,
+        "lastchange": 1551222000000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -192,13 +219,15 @@
         "videos": [],
         "images": ["waasyphus.png"],
         "tags": "Item Jumps",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "One Room Easy Kaizo",
         "creator": "ssp",
-        "date": "1st March 2019",
+        "date": 1551394800000,
+        "lastchange": 1551394800000,
         "description": "some places will give you only one chance, use savestates to let you be able to pracrice the skills",
         "completed": "true",
         "rating": "?",
@@ -206,13 +235,15 @@
         "videos": [],
         "images": ["oneroomeasykaizo.png"],
         "tags": "Kaizo",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "One Room Jump Skill",
         "creator": "ssp",
-        "date": "12nd March 2019",
+        "date": 1552345200000,
+        "lastchange": 1552345200000,
         "description": "",
         "completed": "true",
         "rating": "?",
@@ -220,13 +251,15 @@
         "videos": [{"type": "bilibili", "id": "48480040"}],
         "images": ["one_room_jump.png"],
         "tags": "Kaizo",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Daily 001",
         "creator": "ssp",
-        "date": "13nd March 2019",
+        "date": 1552431600000,
+        "lastchange": 1552431600000,
         "description": "Daily making",
         "completed": "true",
         "rating": "?",
@@ -234,13 +267,15 @@
         "videos": [{"type": "bilibili", "id": "46318648"}],
         "images": ["Daily_001.png"],
         "tags": "Daily",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Jump skills",
         "creator": "ssp",
-        "date": "13nd March 2019",
+        "date": 1552431600000,
+        "lastchange": 1552431600000,
         "description": "The treasure boxes are glitches but the level is still playable",
         "completed": "true",
         "rating": "?",
@@ -248,13 +283,15 @@
         "videos": [],
         "images": ["Jump_Skills_1.png","Jump_Skills_2.png"],
         "tags": "Item Jumps",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Final Boss Linear Test",
         "creator": "WarioSpore",
-        "date": "22st April 2019",
+        "date": 1555884000000,
+        "lastchange": 1555884000000,
         "description": "this is a level to test the final boss room, if the level was longer. it was also a test to show how the chests interact if they're not in their original places and moved else where, which seems to only show their original chest animations positions, and not where the new chests are. as soon as the animation ends, i notice that the new chest locations no longer show the chest itself, which i find interesting. playing the boss itself, definitely changes the difficulty of the final boss in each stage, depending on how you succeed each stage. the first stage, sometimes you're having to chase down the 3rd or 4th mask and trying to make timed jumps. 2nd phase is, personally, the most difficult stage. there is a strategy for each thrown item, but i wont tell you :smirk:. I haven't gotten to the last stage yet, but I think it might be the easiest stage, because you dont have to jump over spikes as much as the original. Due to it's difficulty, I extended the time to about 10 minutes to all :Normal:, :Hard:, & :SHard:. If you want to challenge yourself, reduce the time in the maker. NOTE: In order to try out the level, you must have access to the Golden Passage.",
         "completed": "true",
         "rating": "?",
@@ -262,13 +299,15 @@
         "videos": [{"type": "youtube", "id": "qmDR8lJGwB8"}],
         "images": [],
         "tags": "Boss Fight",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Daily 002",
         "creator": "ssp",
-        "date": "1st May 2019",
+        "date": 1556661600000,
+        "lastchange": 1556661600000,
         "description": "Just to celebrate a 4-day holiday here and get some free time to make a level, xD",
         "completed": "true",
         "rating": "?",
@@ -276,13 +315,15 @@
         "videos": [],
         "images": ["Daily_002.png"],
         "tags": "Daily, Speedrun",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
     
     {
         "name": "Daily 003",
         "creator": "ssp",
-        "date": "13th Ferbuary 2020",
+        "date": 1581548400000,
+        "lastchange": 1581548400000,
         "description": "Only Normal mode available, zipless. PS: do quick save frequently, you always have one chance in some places, and if you don't act in some correct order, the level cannot be finished also wario gets stuck",
         "completed": "true",
         "rating": "?",
@@ -290,13 +331,15 @@
         "videos": [{"type": "youtube", "id": "Um4LfTFkm_k"}],
         "images": ["Daily_003.png"],
         "tags": "Daily, Puzzle",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "Daily 004",
         "creator": "ssp",
-        "date": "15th Ferbuary 2020",
+        "date": 1581721200000,
+        "lastchange": 1581721200000,
         "description": "Only Normal mode available, zipless (only must skill: single midair rock jump, indeed if you know how to clip into the wall, you can go everywhere you want, xD). PS: do quick save frequently, you always have one chance in some places, and if you don't act in some correct order, the level cannot be finished also wario gets stuck",
         "completed": "true",
         "rating": "?",
@@ -304,13 +347,15 @@
         "videos": [],
         "images": ["Daily_004.png"],
         "tags": "Daily, Puzzle",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
     
     {
         "name": "Bird Challenge",
         "creator": "Kleyman",
-        "date": "21th Ferbuary 2020",
+        "date": 1582239600000,
+        "lastchange": 1582239600000,
         "description": "Not kaizo, require flappy bird skills",
         "completed": "true",
         "rating": "?",
@@ -318,13 +363,15 @@
         "videos": [],
         "images": ["Bird_Challenge.png","Bird_Challenge2.png"],
         "tags": "Secrets",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Daily 005",
         "creator": "ssp",
-        "date": "15th June 2020",
+        "date": 1592172000000,
+        "lastchange": 1592172000000,
         "description": "One idea with game mechanism patches, and a usage of glitch, the others are just normal things.",
         "completed": "true",
         "rating": "?",
@@ -332,13 +379,15 @@
         "videos": [],
         "images": ["Daily_005.png"],
         "tags": "Daily",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
     
     {
         "name": "Pesky cat block tower",
         "creator": "Blanchon",
-        "date": "13th June 2020",
+        "date": 1591999200000,
+        "lastchange": 1591999200000,
         "description": "Single level hack (Toy Block Tower), original WL4 style although there are untypical puzzles (easy and \"hard\" ones) and it is more challenging overall. The level is also quite long and filled with secrets, it will take some time to fully explore!\n\n Decoration is not done yet for the most part (will finish it later), but the level is 100% completable.",
         "completed": "false",
         "rating": "?",
@@ -346,13 +395,15 @@
         "videos": [],
         "images": ["PeskyCatBlockTower1pic.png", "PeskyCatBlockTower2pic.png", "PeskyCatBlockTower3pic.png", "PeskyCatBlockTower4pic.png"],
         "tags": "Casual, Puzzles, Secrets, Platforming, Single Level",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     },
 
     {
         "name": "Hollow Wario",
         "creator": "ssp",
-        "date": "16th July 2020",
+        "date": 1594850400000,
+        "lastchange": 1594850400000,
         "description": "the release version of Hollow Wario, only the Normal mode is available. first Level completed. Idk if i will going to add new levels to this hack but i don't have idea for a long time.",
         "completed": "false",
         "rating": "?",
@@ -360,13 +411,15 @@
         "videos": [],
         "images": ["HW1pic.png"],
         "tags": "Zipless, Kaizo, Puzzle",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "link": ""
     },
 
     {
         "name": "WarioLand 4 X 0.1",
         "creator": "violetyosh",
-        "date": "27th Ferbuary 2020",
+        "date": 1582758000000,
+        "lastchange": 1582758000000,
         "description": "It's basically trying to make warioland 4 more challenging, but not unfair. Tutorial edited and the update contains: Spoiled Rotten X and PalmTree Paradise X",
         "completed": "false",
         "rating": "?",
@@ -374,13 +427,15 @@
         "videos": [],
         "images": ["Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_1.png","Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_2.png","Wario_Land_4_X_-_Palm_Tree_Paradise_X_-_3.png"],
         "tags": "Secrets",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "Wario_Land_Liszt132",
         "creator": "liszt132",
-        "date": "27th August 2020",
+        "date": 1598479200000,
+        "lastchange": 1598479200000,
         "description": "",
         "completed": "false",
         "rating": "?",
@@ -388,13 +443,15 @@
         "videos": [],
         "images": ["Wario_Land_Liszt132-0.png","Wario_Land_Liszt132-1.png"],
         "tags": "Secrets",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
         "name": "Wario Land 4 2",
         "creator": "WarioSpore & ...",
         "date": "?",
+        "lastchange": "?",
         "description": "The Golden Diva is back for revenge after being defeated by Wario. This time they designed the pyramid with more challenging passages along with new types! While that, all is gold is missing once again! Will Wario triumph once again and retrieve his beloved treasures?",
         "completed": "false",
         "rating": "?",
@@ -402,13 +459,15 @@
         "videos": [{"type": "youtube", "id": "_x5wsikdUeU"}],
         "images": ["Wario_Land_4_2.png"],
         "tags": "Complete Romhack",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "link": ""
     },
 
     {
-        "name": "<a href=\"https://github.com/becored/WL4_PW\">Wario Land 4: Parallel World v1.03</a>",
+        "name": "Wario Land 4: Parallel World v1.03",
         "creator": "beco",
-        "date": "30th November 2020",
+        "date": 1606690800000,
+        "lastchange": 1630015200000,
         "description": "This is a complete rom hack of Wario Land 4 that I've worked on January 2020 - August 2021.",
         "completed": "true",
         "rating": "?",
@@ -416,13 +475,15 @@
         "videos": [{"type": "youtube", "id": "0IdnKYS-1y4"}],
         "images": ["warioland-parallelworld-1.png", "warioland-parallelworld-2.png", "warioland-parallelworld-3.png", "warioland-parallelworld-4.png"],
         "tags": "Casual, Secrets",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": "https://github.com/becored/WL4_PW"
     },
 
     {
-        "name": "<a href=\"https://github.com/becored/WL4_TA\">Time Attack Edition ver1.4</a>",
+        "name": "Time Attack Edition ver1.4",
         "creator": "beco",
-        "date": "14th December 2020",
+        "date": 1607900400000,
+        "lastchange": 1632607200000,
         "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br> - Timer doesn't include lag frames<br>* For now, not supporting boss levels<br> - Insta-death when run out of the frog timer due to coin display replacement<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
         "completed": "true",
         "rating": "?",
@@ -430,13 +491,15 @@
         "videos": [],
         "images": ["WL4_TimeAttackEdition_v1.4.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
         "tags": "Time, Speedrun",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": "https://github.com/becored/WL4_TA"
     },
 
     {
-        "name": "<a href=\"https://github.com/becored/WL4_single_level_hacks/tree/main/Wario_Land_4_Custom_Block_Master\">Custom Block Master</a>",
+        "name": "Custom Block Master",
         "creator": "beco",
-        "date": "29th January 2021",
+        "date": 1611874800000,
+        "lastchange": 1611961200000,
         "description": "A single level hack with Blanchon's custom blocks <br> All three difficulties are available. Press SELECT in the passage screen to switch difficulty.",
         "completed": "true",
         "rating": "?",
@@ -444,13 +507,15 @@
         "videos": [],
         "images": ["CBM-pic01.png","CBM-pic02.png","CBM-pic03.png"],
         "tags": "Casual, Puzzles, Secrets, Platforming, Single Level, Custom Blocks",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": "https://github.com/becored/WL4_single_level_hacks/tree/main/Wario_Land_4_Custom_Block_Master"
     },
 
     {
-        "name": "<a href=https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/custom%20block%20fun>CustomBlockFun v1.1</a>",
+        "name": "CustomBlockFun v1.1",
         "creator": "ssp",
-        "date": "11th April 2021",
+        "date": 1618092000000,
+        "lastchange": 1618092000000,
         "description": "v1.1: tweak the level a little so the escaping will be more smooth<br>A single-level hack, only normal mode available, i didn't look into the method to disable difficulty selecting, so just don't choose other difficulty",
         "completed": "true",
         "rating": "?",
@@ -458,13 +523,15 @@
         "videos": [],
         "images": ["CBF-pic01.png"],
         "tags": "Casual, Puzzles, Secrets, Platforming, Single Level, Custom Blocks",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/custom%20block%20fun"
     },
 
     {
         "name": "Daily 006",
         "creator": "ssp",
-        "date": "13th August 2021",
+        "date": 1628805600000,
+        "lastchange": 1628805600000,
         "description": "v1.1: fix an unintended escape-the-level method.<br>v1.0: One level hack, only Normal mode available, zipless. <br>PS: quick save frequently, you always have one chance in some places",
         "completed": "true",
         "rating": "?",
@@ -472,7 +539,8 @@
         "videos": [],
         "images": ["Daily_006.png"],
         "tags": "Daily, Puzzle",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "link": ""
     }
 
 ]

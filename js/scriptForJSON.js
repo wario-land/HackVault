@@ -49,7 +49,13 @@ function loadJSON() {
 
 			var divTitle=document.createElement('div');
 			divTitle.className="row";
-			divTitle.innerHTML='<div class="col"><strong>'+data[i]["name"]+'</strong></div>';
+
+			//Add an hyperlink to the title if 'link' is not empty
+			if (data[i]["link"].length > 0) {
+				divTitle.innerHTML='<div class="col"><strong><a href="'+data[i]["link"]+'">'+data[i]["name"]+'</a></strong></div>';
+			} else {
+				divTitle.innerHTML='<div class="col"><strong>'+data[i]["name"]+'</strong></div>';
+			}
 			divHack.appendChild(divTitle);
 
 			var divCentral=document.createElement('div');
@@ -104,7 +110,20 @@ function loadJSON() {
 				var divDescription=document.createElement('div');
 				divDescription.className="col-sm-5";
 				divDescription.innerHTML=""/* "Hack Description:" */;
-				divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+data[i]["date"];
+
+				var dateProvided=data[i]["date"];
+				if (typeof dateProvided === "string") {
+					divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+dateProvided+'</p>';
+				} else if (typeof dateProvided === "number") {
+					var date=new Date(dateProvided);
+					if (typeof data[i]["lastchange"] == "number" && data[i]["lastchange"] > data[i]["date"]) {
+						var lastModif=new Date(data[i]["lastchange"]);
+						divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+date.toDateString()+' <br />Last modification: '+lastModif.toDateString()+'</p>';
+					} else {
+						divDescription.innerHTML+='<p> Creator: '+data[i]["creator"]+' <br />Date Submitted: '+date.toDateString()+'</p>';
+					}
+				}
+				
 				divDescription.innerHTML+='Difficulty: <span class="badge badge-primary badge-'+(data[i]["difficulty"].toLowerCase())+'">'+data[i]["difficulty"]+'</span><br>';
 				if (data[i]["completed"] === "true") {
 					divDescription.innerHTML+='Status: <span class="badge bg-success">Completed</span></p>';
