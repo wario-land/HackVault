@@ -541,6 +541,22 @@
         "tags": "Daily, Puzzle",
         "difficulty": "Medium",
         "link": ""
+    },
+
+    {
+        "name": "Daily 007",
+        "creator": "ssp",
+        "date": 1635206400000,
+        "lastchange": 1635206400000,
+        "description": "now let Wario and enemies warp. Daily-ish and Halloween-ish hack but with a little more content than my other Daily hacks. (disable difficulty selecting, disable demo playing, single level hack) the H-Warp is a little buggy on some walls but won't cause big problem",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_007_Halloween_2021.bps",
+        "videos": [{"type": "youtube", "id": "r6m20r2jMI0"}],
+        "images": ["Daily_007_Halloween_2021.png"],
+        "tags": "Daily, Zipless, Kaizo",
+        "difficulty": "Hard",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_007"
     }
 
 ]
