@@ -557,6 +557,22 @@
         "tags": "Daily, Zipless, Kaizo",
         "difficulty": "Hard",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_007"
+    },
+
+    {
+        "name": "Daily 008",
+        "creator": "ssp",
+        "date": 1643455800000,
+        "lastchange": 164345580000,
+        "description": "A concept water level with several new and old patches never used before.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_008.bps",
+        "videos": [],
+        "images": ["Daily_008.png"],
+        "tags": "Daily, Zipless, Kaizo",
+        "difficulty": "Hard",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_008"
     }
 
 ]
