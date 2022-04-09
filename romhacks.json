@@ -573,6 +573,22 @@
         "tags": "Daily, Zipless, Kaizo",
         "difficulty": "Hard",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_008"
+    },
+
+    {
+        "name": "Daily 009",
+        "creator": "ssp",
+        "date": 1647471600000,
+        "lastchange": 1647471600000,
+        "description": "Now we have new toy blocks to play with.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_009.bps",
+        "videos": [],
+        "images": ["Daily_009.png"],
+        "tags": "Daily, Zipless, Puzzle",
+        "difficulty": "Medium",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_009"
     }
 
 ]
