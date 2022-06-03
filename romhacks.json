@@ -589,6 +589,22 @@
         "tags": "Daily, Zipless, Puzzle",
         "difficulty": "Medium",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_009"
+    },
+
+    {
+        "name": "Burning Nightmares",
+        "creator": "Hiro-sofT",
+        "date": 1654268100000,
+        "lastchange": 1654268100000,
+        "description": "Single level romhack that features a huge new level for Wario Land 4. Please read the included readme for more info.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "WL4_BurningNightmares_FinalRelease.zip",
+        "videos": [],
+        "images": ["WL4_burningnightmares_final-1.png","WL4_burningnightmares_final-2.png","WL4_burningnightmares_final-3.png","WL4_burningnightmares_final-4.png","WL4_burningnightmares_final-5.png","WL4_burningnightmares_final-6.png"],
+        "tags": "Casual, Secrets",
+        "difficulty": "Hard",
+        "link": ""
     }
 
 ]
