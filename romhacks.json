@@ -605,6 +605,22 @@
         "tags": "Casual, Secrets",
         "difficulty": "Hard",
         "link": ""
+    },
+
+    {
+        "name": "Daily 0x00A",
+        "creator": "ssp",
+        "date": 1652803200000,
+        "lastchange": 1654185600000,
+        "description": " spriteset insta reset demo level with light kaizo and platforming, sometimes the sprites are buggy, but won't cause big problems.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_0x00A_v1.2.bps",
+        "videos": [],
+        "images": ["Daily_0x00A.png"],
+        "tags": "Daily, Zipless, Kaizo, Platforming",
+        "difficulty": "Hard",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00A"
     }
 
 ]
