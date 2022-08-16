@@ -621,6 +621,22 @@
         "tags": "Daily, Zipless, Kaizo, Platforming",
         "difficulty": "Hard",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00A"
+    },
+
+    {
+        "name": "Daily 0x00B",
+        "creator": "ssp",
+        "date": 1656777600000,
+        "lastchange": 1656864000000,
+        "description": " i think you don't know enough about damage boost. a new level used to test the new WL4Editor graphic manager features. see more details in readme file.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_0x00B.zip",
+        "videos": [],
+        "images": ["Daily_0x00B.png"],
+        "tags": "Daily, Zipless, Kaizo, Platforming, Puzzle",
+        "difficulty": "Hard",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00B"
     }
 
 ]
