@@ -637,6 +637,22 @@
         "tags": "Daily, Zipless, Kaizo, Platforming, Puzzle",
         "difficulty": "Hard",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00B"
+    },
+
+    {
+        "name": "Daily 0x00C",
+        "creator": "ssp",
+        "date": 1663762800000,
+        "lastchange": 1663762800000,
+        "description": " a small level to show ideas with asynchronized Layer 0 and Layer 2 patches.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_0x00C_v1.bps",
+        "videos": [],
+        "images": ["Daily_0x00C_v1.png"],
+        "tags": "Daily, Zipless, Kaizo, Puzzle",
+        "difficulty": "Hard",
+        "link": "https://github.com/shinespeciall/under-making-level/blob/master/Finished%20Hack/Daily_0x00C"
     }
 
 ]
