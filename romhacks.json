@@ -669,6 +669,22 @@
         "tags": "Daily, Zipless, Puzzle",
         "difficulty": "Medium",
         "link": "https://github.com/shinespeciall/under-making-level/blob/master/Finished%20Hack/Daily_0x00D"
+    },
+
+    {
+        "name": "Wario Land 4: Magic Crystals v0.1 demo",
+        "creator": "beco",
+        "date": 1671292800000,
+        "lastchange": 1671292800000,
+        "description": "My new WIP rom hack I've been working on since around July 2022.<br>This is like PW but put new mechanisms and more custom blocks.<br>Planning to make this a full length hack eventually but it will take time because I'm working on both level editing and patch,<br>also not sure if I can keep my motivation alive and working on this consistently until the end,<br>so I'm releasing the early demo as I promised. I hope you enjoy it! (any feedback would be appreciated)",
+        "completed": "false",
+        "rating": "?",
+        "filename": "Wario_Land_4_Magic_Crystals_ver0.1.zip",
+        "videos": [],
+        "images": ["Wario_Land_4_Magic_Crystals_pic01.png", "Wario_Land_4_Magic_Crystals_pic02.png", "Wario_Land_4_Magic_Crystals_pic03.png", "Wario_Land_4_Magic_Crystals_pic04.png"],
+        "tags": "Casual, Secrets",
+        "difficulty": "Medium",
+        "link": "https://github.com/becored/WL4_MC"
     }
 
 ]
