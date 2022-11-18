@@ -658,8 +658,8 @@
     {
         "name": "Daily 0x00D",
         "creator": "ssp",
-        "date": 1667318400000,
-        "lastchange": 1667318400000,
+        "date": 1664640000000,
+        "lastchange": 1664640000000,
         "description": " Wario wants to jump higher, now he can. but wait, that's perhaps not on the Earth.",
         "completed": "true",
         "rating": "?",
@@ -674,8 +674,8 @@
     {
         "name": "Wario Land 4: Magic Crystals v0.1 demo",
         "creator": "beco",
-        "date": 1671292800000,
-        "lastchange": 1671292800000,
+        "date": 1668700800000,
+        "lastchange": 1668700800000,
         "description": "My new WIP rom hack I've been working on since around July 2022.<br>This is like PW but put new mechanisms and more custom blocks.<br>Planning to make this a full length hack eventually but it will take time because I'm working on both level editing and patch,<br>also not sure if I can keep my motivation alive and working on this consistently until the end,<br>so I'm releasing the early demo as I promised. I hope you enjoy it! (any feedback would be appreciated)",
         "completed": "false",
         "rating": "?",
