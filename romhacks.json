@@ -653,6 +653,22 @@
         "tags": "Daily, Zipless, Kaizo, Puzzle",
         "difficulty": "Hard",
         "link": "https://github.com/shinespeciall/under-making-level/blob/master/Finished%20Hack/Daily_0x00C"
+    },
+
+    {
+        "name": "Daily 0x00D",
+        "creator": "ssp",
+        "date": 1667318400000,
+        "lastchange": 1667318400000,
+        "description": " Wario wants to jump higher, now he can. but wait, that's perhaps not on the Earth.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_0x00D.bps",
+        "videos": [],
+        "images": ["Daily_0x00D.png"],
+        "tags": "Daily, Zipless, Puzzle",
+        "difficulty": "Medium",
+        "link": "https://github.com/shinespeciall/under-making-level/blob/master/Finished%20Hack/Daily_0x00D"
     }
 
 ]
