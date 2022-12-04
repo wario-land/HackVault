@@ -43,7 +43,7 @@ function loadJSON() {
 	var list=document.getElementById("list");
 	var data = json;
 	var html = '';
-	for(let i=0;i<data.length;i++) {
+	for(let i=data.length-1;i>=0;i--) {
 		var divHack=document.createElement('div');
 			divHack.className="hack shadow-sm p-3 mb-3 bg-white rounded";
 
