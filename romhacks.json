@@ -685,6 +685,22 @@
         "tags": "Casual, Secrets",
         "difficulty": "Medium",
         "link": "https://github.com/becored/WL4_MC"
+    },
+
+    {
+        "name": "Daily 0x00E",
+        "creator": "ssp",
+        "date": 1671001600000,
+        "lastchange": 1671001600000,
+        "description": "Wario goes to play magic carpets in some weird black block tower.<br>(v1.1)",
+        "completed": "true",
+        "rating": "?",
+        "filename": "Daily_0x00E_v1_1.bps",
+        "videos": [],
+        "images": ["Daily_0x00E.png"],
+        "tags": "Daily, Zipless, Puzzle",
+        "difficulty": "Medium",
+        "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00E"
     }
 
 ]
