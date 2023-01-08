@@ -97,7 +97,7 @@ The Patch Edit Dialog has several fields for configuring your patch:
 + **Hook**: This is the string which will be placed at the hook address. Must be an even number of hexadecimal digits, and may optionally include the patch address identifier "P". After WL4Editor has determined where it will place the patch content in the save data structure, the P will be replaced with the address of the beginning of the save data content.
 + **Description**: A description of what the patch does.
 
-In the case of ASM or C patches, you may also include the following identifiers anywhere in the file inside a comment to auto-populate the fields of the Patch Edit Dialog: **@HookAddress, @HookString, @Description**
+In the case of ASM or C patches, you may also include the following identifiers anywhere in the file inside a comment to auto-populate the fields of the Patch Edit Dialog: **@HookAddress, @HookString, @Descriptionm**
 
 ---
 
@@ -355,6 +355,7 @@ Now, we will write our C code:
 // @Description Rocks are always in the "thrown" state
 // @HookAddress 0x6C806
 // @HookString 0248 86460248 0047c046 19c80608 P
+// @EntryFunctionSymbol UnlimitedRockBouncing2
 
 struct OAM_REC {
     char PAD[2];
@@ -409,6 +410,8 @@ void UnlimitedRockBouncing2()
 
 Here is an explanation of elements not already covered by example 2:
 
+**@EntryFunctionSymbol**: an optional identifier to tell the WL4Editor the entry point of the whole patch. sometimes, you may want to put multiple functions in one patch file, using sub-routine methods to make the code more read-able. you can just put the function name there without the braces after the identifier to make it works. since C programming language standard does not allowed function overwrite, so the same function name can only appear once in the same file.
+
 **struct OAM\_REC {...} / struct ENTITY\_REC {...}**: We define structs for interfacing with structure arrays in RAM. These 2 structure formats are mostly known, and we only need to give names to fields which are used in our code. The rest can be padded with byte arrays.
 
 **#define OAM ((volatile struct OAM\_REC\*) 0x3000964) / #define ENTITIES (...)**: These preprocessor symbols allow us to access the OAM and Entity arrays at their location in RAM. They are marked "volatile" to ensure that the compiler does not attempt to remove any code that uses these symbols. The optimizer might try to remove that code if it cannot detect that it is being used for IO.
@@ -428,3 +431,9 @@ After doing all this and applying our patch, the rocks should now bounce off eac
 **What if my hook code is not the same size as the area I'm replacing?** The above example was really lucky because the hook code was exactly 18 bytes, which was the size of the area we were replacing. If the hook code ended up being smaller than the area we're replacing, it wouldn't really matter as long as our hardcoded return address is referencing the instruction after the area being replaced. If the hook code was larger than the area we're replacing, we'd need to expand that area we're replacing or find another location in the ROM.
 
 **Isn't LR clobbered by our hook code? How will WL4 return from the function we are patching?** The compiler is smart about knowing which registers to save on the stack, based on which ones are clobbered. If some function A does not call any other  function B (function A would be called a "leaf" function) then the compiler typically would not push LR in function A, because LR is not modified by the code. If we were to place a hook in a leaf function, then LR _would_ get clobbered. If you look at the [execution flowchart](tutorials/images/patch-tutorial/ThumbHook1.png) for sub\_806C794, you can see that it has successors, so it would call other functions, and we would expect that it is compiled in such a way as to save/restore LR for its own needs. Indeed, the very first instruction at 0806C794 is "PUSH {LR}". You should always check for this; _if the function you are patching is a leaf function, your hook code will need to preserve and restore LR by using the stack_.
+
+**What if i want to use const array in C code?** You can do something like this in the C patch files:
+```
+const unsigned char anything[] \*__attribute__((aligned(4)))*\ = {0, 1, 2, 3};
+```
+since it is impossible to define base point of the stack or the heap on the running GBA, so only const array is allowed. if you want to use some global variables. you have to define them using exact address. So far, we found that, in the iram space, space from 0x03006280 and 0x3007CE0 is not used in vanilla game. the bottom boundary is the place where the biggest function call stack will grow. So if you do a lot of things in your patches the stack will perhaps grow bigger, then the freespace bottom boundary will become some smaller value. Usually, we should just define global variables start from the top of the free space and keep its bottom boundary be flexible for function call stack.
