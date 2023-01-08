@@ -434,6 +434,6 @@ After doing all this and applying our patch, the rocks should now bounce off eac
 
 **What if i want to use const array in C code?** You can do something like this in the C patch files:
 ```
-const unsigned char anything[] \*__attribute__((aligned(4)))*\ = {0, 1, 2, 3};
+const unsigned char anything[] /*__attribute__((aligned(4)))*/ = {0, 1, 2, 3};
 ```
 since it is impossible to define base point of the stack or the heap on the running GBA, so only const array is allowed. if you want to use some global variables. you have to define them using exact address. So far, we found that, in the iram space, space from 0x03006280 and 0x3007CE0 is not used in vanilla game. the bottom boundary is the place where the biggest function call stack will grow. So if you do a lot of things in your patches the stack will perhaps grow bigger, then the freespace bottom boundary will become some smaller value. Usually, we should just define global variables start from the top of the free space and keep its bottom boundary be flexible for function call stack.
