@@ -484,7 +484,7 @@
         "creator": "beco",
         "date": 1607900400000,
         "lastchange": 1677513600000,
-        "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
+        "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
         "completed": "true",
         "rating": "?",
         "filename": "Wario_Land_4_TimeAttack_Edition_ver1.5.zip",
