@@ -480,16 +480,16 @@
     },
 
     {
-        "name": "Time Attack Edition ver1.4",
+        "name": "Time Attack Edition ver1.5",
         "creator": "beco",
         "date": 1607900400000,
-        "lastchange": 1632607200000,
-        "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br> - Timer doesn't include lag frames<br>* For now, not supporting boss levels<br> - Insta-death when run out of the frog timer due to coin display replacement<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
+        "lastchange": 1677513600000,
+        "description": "[Features]<br>* Timer is always on top-right of screen in level (replaced coin display, it shows Minutes'Seconds'Frames)<br>* Best time will be saved when escape with all four jewel pieces and Keyzer for each level/difficulty<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Taking the lap time for each jewel piece and Keyzer and will be saved when escape with best time<br>* Timer blinks when beating the best time<br> - To clear all best times, hold L+R when boot the game<br>* Retry current level from pause menu<br>* Change difficulty (press SELECT in the passage screen)<br>* Faster movement in the map screen<br>* Shorter cutscenes",
         "completed": "true",
         "rating": "?",
-        "filename": "Wario_Land_4_TimeAttack_Edition_ver1.4.zip",
+        "filename": "Wario_Land_4_TimeAttack_Edition_ver1.5.zip",
         "videos": [],
-        "images": ["WL4_TimeAttackEdition_v1.4.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
+        "images": ["WL4_TimeAttackEdition_v1.5.png","WL4_TimeAttackEdition_v1.1_3.png","WL4_TimeAttackEdition_v1.1_2.png"],
         "tags": "Time, Speedrun",
         "difficulty": "Medium",
         "link": "https://github.com/becored/WL4_TA"
