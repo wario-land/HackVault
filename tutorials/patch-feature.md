@@ -470,3 +470,7 @@ void RealEntry()
 + Always remember that: don't set the @HookAddress and the @HookString in the "C\_dependency" type patch file, or it cannot be loaded into the Patch Manager of WL4Editor. Also in every "C\_dependency" type patch file, the @EntryFunctionSymbol will be ignored.
 
 + How it works: "C\_dependency" type patches will always be compiled and linked before other regular patches. By grabbing all the global symbols of "C\_dependency" type patches from the generated ".elf.txt", putting them into the linker script for the rest of the regular C patches, All the other regular patches can use global symbols from all "C\_dependency" patches.
+
+**Can i include header files in C code?** You can include custom .h file in regular C patch and "C\_dependency" type patch file. Don't put standard C include files into those C files since functions not exist in the vanilla ROM will never work. Sometimes, when you make a new patch bundle. you feel headache to maintain those define lines in multiple files. then we just put them into the header file and maintain them together.
++ There are several things no supposed to be in the header file which are*: custom functions, custom const array, extern lines for stuff in "C\_dependency" patches if you want to include the \*.h file in your "C\_dependency" patches.
++ The things supposed to be in the header file: enums, struct definition, define lines for global variables and define lines for vanilla function which can be found in the ROM.
