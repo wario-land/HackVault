@@ -701,6 +701,22 @@
         "tags": "Daily, Zipless, Puzzle",
         "difficulty": "Medium",
         "link": "https://github.com/shinespeciall/under-making-level/tree/master/Finished%20Hack/Daily_0x00E"
+    },
+
+    {
+        "name": "Wario Land 4: PT-like Moveset Conversion Patches",
+        "creator": "beco",
+        "date": 1681833600000,
+        "lastchange": 1684598400000,
+        "description": "Including Moveset:<br> - Roll (holding down during dash)<br> - Super Jump (press up during dash)<br> - Shoulder Bash (press B during super jump)<br> - Non-stop dash direction change<br> - Ground pound during dash",
+        "completed": "true",
+        "rating": "?",
+        "filename": "WL4_PT_moveset_v1.1.zip",
+        "videos": [],
+        "images": ["WL4_default_cover.png"],
+        "tags": "PizzaTower",
+        "difficulty": "Medium",
+        "link": "https://github.com/becored/WL4_PT/releases/tag/v1.1"
     }
 
 ]
