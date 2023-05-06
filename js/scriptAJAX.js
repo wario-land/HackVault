@@ -25,6 +25,12 @@ function initializeAjax(markdownFile) {
 	xhr.onload = function(e) {
 		if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 			markdown=xhr.response;
+
+			// we want to modify the markdown things here
+			// to replace the img file links to fit the runtime path
+			// the string contents of the md file is saved in markdown, just replace substr in it
+			// TODO
+
 			initializeMarkdown();
 		}
 	};

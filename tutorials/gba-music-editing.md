@@ -60,7 +60,7 @@ A FOSS cross-platform midi editor with a nice UI. (The UI is actually quite bad,
 
 You have to put the Wario Land 4 Sounfont in the right folder (C:\Users\<Put Your User Name>\Documents\MuseScore3\SoundFonts)
 
-![Image](tutorials/images/gba-hacking/MuseScoreSoundfont.png
+![Image](tutorials/images/gba-hacking/MuseScoreSoundfont.png)
 
 Then select View -> Synthesizer and select the soundfont.
 
