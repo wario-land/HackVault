@@ -14,7 +14,7 @@
 
 Now, we launch our NO\$GBA debugger, configure the controller simulation stuff by yourself, load the WL4 rom into it and run the game and let wario goes into the first Level. After Wario coming out from the vortex (that's how we define the `ingame period`), we click the disassembler panel to pause the game. then use the menu bar: `Window -> BG Maps -> BG1 Map` to open the `VRAM Viewer`.
 
-![Image](tutorials/1_LayerEditing/1_1_Overview/images/VRAMViewerBG1.png)
+![Image](tutorials/1_LayerEditing/1_1_Overview/images/VramViewerBG1.png)
 
 Let me talk about the graphic things on the `Layer` first. Then I will talk about functionalities of different layers later.
 
@@ -31,7 +31,7 @@ GBA BG render logic for WL4 ingame period: Load `Tile8x8` data into the Tile VRA
 **The Tile8x8 data only includes the color id for each pixel, but does not have the color info in it! While, it is the 'mapping data' which provide enough info to render Tile8x8s into BGs.**
 Okay, in the `VRAM Viewer`, we click the `Tile 1` tab and hover our mouse over the first blue shiny `Tile8x8`, then compare it with the second `Tile8x8` right after it:
 
-![Image](tutorials/1_LayerEditing/1_1_Overview/images/VRAMViewerTileData.png)
+![Image](tutorials/1_LayerEditing/1_1_Overview/images/VramViewerTileData.png)
 
 By comparing the Tile Address. We can find, every `Tile8x8` uses `0x20` bytes in the VRAM. Basically, this is how the `Tile8x8` be constructed:
 
