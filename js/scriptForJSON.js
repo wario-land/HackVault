@@ -16,7 +16,7 @@ function loadIframe(element,videoType) {
 	if (videoType === "youtube") {
 		element.innerHTML='<iframe width="240" height="160" src="https://www.youtube.com/embed/'+videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 	} else if (videoType === "bilibili") {
-		element.innerHTML='<iframe width="240" height="160" src="https://player.bilibili.com/player.html?aid='+videoId+'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="width: 240; height: 160px; max-width: 100%"></iframe>';
+		element.innerHTML='<iframe width="240" height="160" src="https://player.bilibili.com/player.html?bvid=BV' + videoId + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="width: 240; height: 160px; max-width: 100%"></iframe>';
 	}
 }
 
@@ -101,7 +101,7 @@ function loadJSON() {
 						}
 
 						divCarouselControls.appendChild(divCarouselInner);
-						divCarouselControls.innerHTML+='<a class="carousel-control-prev" href="#carouselExampleControls-i'+i+'" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true" > </span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleControls-i'+i+'" role="button" data-slide="next" > <span class="carousel-control-next-icon" aria-hidden="true" ></span> <span class="sr-only">Next</span> </a>';
+						divCarouselControls.innerHTML+='<a class="carousel-control-prev" href="#carouselExampleControls-i'+i+'" type="button" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true" > </span> <span class="visually-hidden">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleControls-i'+i+'" type="button" data-bs-slide="next" > <span class="carousel-control-next-icon" aria-hidden="true" ></span> <span class="visually-hidden">Next</span> </a>';
 
 					divCarousel.appendChild(divCarouselControls);
 
