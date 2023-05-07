@@ -1,7 +1,7 @@
 # An Overview on WL4Editor Ingame Layer Editing
 
 #### Tools:
-[NO\$GBA debug version](https://problemkaputt.de/gba.htm): We use this only to understand how GBA games work. Don't get the gaming version. you only need to debugger and all kinds of viewers to understand things. If you want an emulator for gaming, go to install mGBA or Emuhack by yourself from official sites. ***Beware, the NO\$GBA debugger is free from the official website. you don't need to grind through the internet looking for old pirated NO$GBA debugger.***
+[NO$GBA debug version](https://problemkaputt.de/gba.htm): We use this only to understand how GBA games work. Don't get the gaming version. you only need to debugger and all kinds of viewers to understand things. If you want an emulator for gaming, go to install mGBA or Emuhack by yourself from official sites. ***Beware, the NO$GBA debugger is free from the official website. you don't need to grind through the internet looking for old pirated NO$GBA debugger.***
 
   
 ## Part 1: GBA mechanism and data format on Layer
@@ -10,9 +10,9 @@
 
 #### Tile8x8 data format
 
-`Layer` is a useful concecpt people created for 2D games. You can put graphics on different layers to make them move in different speed, or do affine transformation, shake it, fade in or fade out, etc. That's how `Layer` works in 2D games. in GBA, the hardware provides us 4 layers (the NO\$GBA names it `BG`) to do all kinds of graphic works. We are not going to talk a lot on how to use GBA I/O registers to control them, also, we won't show you the different modes the GBA layers can work on. We will only pay attention to the only one mode used in WL4 ingame period. Everything we will do is based on it.
+`Layer` is a useful concecpt people created for 2D games. You can put graphics on different layers to make them move in different speed, or do affine transformation, shake it, fade in or fade out, etc. That's how `Layer` works in 2D games. in GBA, the hardware provides us 4 layers (the NO$GBA names it `BG`) to do all kinds of graphic works. We are not going to talk a lot on how to use GBA I/O registers to control them, also, we won't show you the different modes the GBA layers can work on. We will only pay attention to the only one mode used in WL4 ingame period. Everything we will do is based on it.
 
-Now, we launch our NO\$GBA debugger, configure the controller simulation stuff by yourself, load the WL4 rom into it and run the game and let wario goes into the first Level. After Wario coming out from the vortex (that's how we define the `ingame period`), we click the disassembler panel to pause the game. then use the menu bar: `Window -> BG Maps -> BG1 Map` to open the `VRAM Viewer`.
+Now, we launch our NO$GBA debugger, configure the controller simulation stuff by yourself, load the WL4 rom into it and run the game and let wario goes into the first Level. After Wario coming out from the vortex (that's how we define the `ingame period`), we click the disassembler panel to pause the game. then use the menu bar: `Window -> BG Maps -> BG1 Map` to open the `VRAM Viewer`.
 
 ![Image](tutorials/1_LayerEditing/1_1_Overview/images/VramViewerBG1.png)
 
@@ -79,7 +79,7 @@ x for x flip, one bit flag to flip the Tile8x8 horizontally;
 y for y flip, one bit flag to flip the Tile8x8 vertically;
 t for tile id, 10 bits can represent value in range [0, 0x3FF];
 ```
-in the VRAM, for every `BG`, the `Tile8x8` data and mapping data saved in different places, usually, when loading graphics into VRAM, most of the `Tile8x8` data be loaded one time, while the mapping data will update runtime if the image on the `BG` cannot be shown in one screen, especially when you want to scroll a WL4 ingame Room around, the mapping data on the edge of the camera box will keep changing. you can use the NO\$GBA debugger to see how the runtime loading feels like in the `VRAM viewer`.
+in the VRAM, for every `BG`, the `Tile8x8` data and mapping data saved in different places, usually, when loading graphics into VRAM, most of the `Tile8x8` data be loaded one time, while the mapping data will update runtime if the image on the `BG` cannot be shown in one screen, especially when you want to scroll a WL4 ingame Room around, the mapping data on the edge of the camera box will keep changing. you can use the NO$GBA debugger to see how the runtime loading feels like in the `VRAM viewer`.
   
 ## Part 2: Layer mechanism in WL4 and WL4Editor
 #### TODOs
