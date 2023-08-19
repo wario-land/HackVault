@@ -98,10 +98,10 @@ T n represents for `Tile8x8` with id in this `Tile16`. to represent it, since we
 `RLE` is `Run-Length Encoding` in short. It is an algorithm or method to compress the layer mapping data whose speed to decompress and extract the mapping data to the RAM is acceptably fast. They use `RLE8` and `RLE16` to decrease the space usages of every Layer's mapping data in the ROM.
 Layer type 0x10 and 0x20 is defined based on the `Tile8x8` and `Tile16`. The developers in Nintendo believed that, in some in-game `Layers`, it takes less ROM space to save the decompressed data by using `Tile8x8`. So those `Layers` are represented in `Tile8x8` instead of `Tile16`. So, they defined:
 ```
-The Layers which are constructed by Tile8x8 is marked type 0x20
-The Layers which are constructed by Tile16 is marked type 0x10
+The Layers which are constructed by Tile8x8 have mapping type 0x20
+The Layers which are constructed by Tile16 have mapping type 0x10
 ```
-Usually. tile graphic data which constructed the `Tile16` encoded `Layers` (can be Layer 0, 1, 2) can be called `foreground (fg) Tile8x8`. Tile graphic data which constructed the `Tile8x8` encoded `Layers` (can be Layer 0, 3) can be called `background (bg) Tile8x8`. Only the `Tile16` encoded `Layers` have the `event id` and `terrain id` features. All the Tile relative data is maintained in the `Tileset`, only the mapping data is maintained by `Layers` under `RoomHeader` strcture.
+Usually. tile graphic data which constructed the `Tile16` encoded `Layers` (can be Layer 0, 1, 2) can be called `foreground (fg) Tile8x8`. Tile graphic data which constructed the `Tile8x8` encoded `Layers` (can be Layer 0, 3) can be called `background (bg) Tile8x8`. Only the `Tile16` encoded `Layers` have the `event id` and `terrain id` features. All the Tile relative data is maintained in the `Tileset`, only the mapping data is maintained by `Layers` under `RoomHeader` strcture. We will dig into this next time.
 
 #### Terrain type and event id in Tile16
 To make the game development more convenient, the developers assigned `terrain type` and `event` roles for every Tile16. It is just how i named it. they used some more abstract romaji to name those things in the Gigaleak source code. most of the time, the `terrain types` do the Wario's and enemies' hitbox work with the `Tile16`, the `event id` more likely to do something that, when Wario hit into a `Tile16`, then some stats of the game, or some global variables change. They always work together to support a lot of game mechanism.
