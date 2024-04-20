@@ -68,8 +68,12 @@ now time to complain the bad design on `RoomHeader` struct.
 - Why they use some bits from mapping type bytes to scroll layer 0, but then use an extra byte `Layer3Scrolling` in `RoomHeader` to scroll the layer 3 ?
 - Why use one byte `AlphaBlendingAndPriority` to control both **alpha blending** and **layer priority** in the Room? there are still some unused bytes in the `RoomHeader` struct.
 
-the decoupling of **alpha blending** and **layer priority** controls in `Room Config Dialog` took me a lot of time, and it even got a rewrite on the data side since the it is so ugly in the `WL4Editor`'s source code. I'm not going to show its details, if some people want to look into it, just read the source code of `WL4Editor`.
+The decoupling controls of **alpha blending** and **layer priority** in `Room Config Dialog` took me a lot of time to find and program, and it even got a rewrite on the data side since the it is so ugly in the `WL4Editor`'s source code. I'm not going to show its details, if some people want to look into it, just read the source code of `WL4Editor`.
 
 Most of the other variables in `RoomHeader` struct are self-evident too. The only things worth a mention is the `WaterLevel`. But it is not hard to understand. since everything can be explained in one pic.
 
 ![Image](tutorials/1_LayerEditing/1_2_LayerEffect/images/WaterLevelVariableInRoomHeader.png)
+
+## Effectiveness Condition of Terrain ID and Event ID
+
+In general, all those Terrain ID and Event ID are controlled by game mechanism. So, you cannot expect every terrain ID or Event ID works as you expect anywhere, anytime. Sometimes, extra patches are needed.
