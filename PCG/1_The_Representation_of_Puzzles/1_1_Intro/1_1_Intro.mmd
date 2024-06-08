@@ -1,0 +1,42 @@
+# 1.1 The very first Intro on Representation of Puzzles
+
+## The Intro of the Intro
+Diffusion models for picture generations and Transformer for LLM have suprised people a lot and shown us potential to reach AGI. But before AGI being reached, or even after AGI being reached, we still need to grind for procedual contents generation since people believe using a full-featured AGI to make a game, or do anything else will use a lot more energy than a specified one or plain program based on pure old-time procedual programming. So we should always believe, even after AGI being made, AI and human still need to work on more stuff based on pure logic (or pure calculation and theories). 
+
+We have already seen research or blog posts on how specific games or puzzles be represent by mathematical structures, and the steps to the solutions of those puzzles and games can be represented by other things. For example, Stephen Wolfram wrote [something](https://writings.stephenwolfram.com/2020/04/finally-we-may-have-a-path-to-the-fundamental-theory-of-physics-and-its-beautiful/) in 2020 which tries to represent everything using graph. But i don't think it is a good idea to apply the same idea to generate areas in a temporal-and-state-based game like Wario Land 4. Since it is so hard to hardcode and use logic to find all the possible cases for everything. We definitely need some other mathematical structure to represent the stuff in an area approximately, then try to make the search viable in some PC.
+
+## The very First Idea
+Taking every Tile16 as an element in a matrix and operating or remembering every state of the matrix is a super bad idea. We need to bypass this problem and try to use something small.
+
+Assume we have an almost empty Room with only a breakable block which blocking the way and Wario should be able to break it to go accross. Now we represent the Room state using the vector below:
+$$
+\left(\begin{array} {c|c} 0 & 1 \end{array} \right)
+\tag{1.1.1}
+$$
+The left element of the vector represents the Wario's state (normal = 0; crouch = 1). The right element of the vector represents the hinder which blocks Wario away from the goal (hinder = 1; no hinder = 0). A normal state Wario should be able to B dash to break the block and remove the hinder, we use the operator below to represent the step:
+$$
+\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}
+\tag{1.1.2}
+$$
+Now we apply the operator on the Room state vector:
+$$
+\left(\begin{array} {c|c} 0 & 1 \end{array} \right)
+\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}=
+\left(\begin{array} {c|c} 0 & 0 \end{array} \right)
+\tag{1.1.3}
+$$
+The result means Wario ends up with normal state, and the hinder is gone.
+Now what if we let Wario crouch? Assume the crouch is done by addition:
+$$
+\left(\begin{array} {c|c} 0 & 1 \end{array} \right) + \left(\begin{array} {c|c} 1 & 0 \end{array} \right) = \left(\begin{array} {c|c} 1 & 1 \end{array} \right)
+\tag{1.1.4}
+$$
+Now we apply the B dash operator again on the result above:
+$$
+\left(\begin{array} {c|c} 1 & 1 \end{array} \right)
+\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}=
+\left(\begin{array} {c|c} 0 & 1 \end{array} \right)
+\tag{1.1.5}
+$$
+Now we find the hinder is still there in the state vector.
+The example above is crappy and simple, you can find a lot of problem when try to expand its usage to all the cases of Wario Land 4 game. But now we have at least a new path to abstract the state of the Room hierarchically. We should only track the state of Wario, important enemy, switches and path, and use mathematics to represent and traverse all the possible cases.

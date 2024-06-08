@@ -20,7 +20,11 @@ function hashChange() {
 function initializeAjax(markdownFile) {
 	var xhr = new XMLHttpRequest();
 	xhr.overrideMimeType("text/markdown; charset=UTF-8");
-	xhr.open('GET', "tutorials/"+markdownFile, true);
+	if (markdownFile.includes(".mmd")) {
+		xhr.open('GET', "PCG/"+markdownFile, true);
+	} else {
+		xhr.open('GET', "tutorials/"+markdownFile, true);
+	}
 
 	xhr.onload = function(e) {
 		if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
