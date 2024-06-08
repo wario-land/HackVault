@@ -39,12 +39,21 @@ function initializeAjax(markdownFile) {
 
 function initializeMarkdown() {
 
-	var converter = new showdown.Converter();
-	html=converter.makeHtml(markdown);
-	
+	// the old code which used showdown.js to render markdown on webpages
+	// var converter = new showdown.Converter();
+	// html=converter.makeHtml(markdown);
+	// document.getElementById("blog-post").innerHTML = html;
+
 	//Applying markdown -> html
-	document.getElementById("blog-post").innerHTML=html;	
-	
+	const el = document.getElementById("blog-post");
+	if (el) {
+		const options = {
+			htmlTags: true
+		};
+		const html = window.render(markdown, options);
+		el.innerHTML = html;
+	}
+
 	//Post-processing html (the goal is to keep markdown format and adapt it to fit)
 
 	//Images (adding class img-fluid)
