@@ -52,7 +52,15 @@ function initializeMarkdown() {
 	const el = document.getElementById("blog-post");
 	if (el) {
 		const options = {
-			htmlTags: true
+			htmlTags: true,
+			outMath: { //You can set which formats should be included into html result
+				include_mathml: true,
+				include_asciimath: true,
+				include_latex: true,
+				include_svg: true, // sets in default
+				include_tsv: true,
+				include_table_html: true, // sets in default
+			}
 		};
 		const html = window.render(markdown, options);
 		el.innerHTML = html;

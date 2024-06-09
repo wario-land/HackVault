@@ -7,19 +7,22 @@ We have already seen research or blog posts on how specific games or puzzles be 
 
 ## The very First Idea
 Taking every Tile16 as an element in a matrix and operating or remembering every state of the matrix is a super bad idea. We need to bypass this problem and try to use something small.
-
-Assume we have an almost empty Room with only a breakable block which blocking the way and Wario should be able to break it to go accross. Now we represent the Room state using the vector below:
+![Image](PCG/1_The_Representation_of_Puzzles/1_1_Intro/images/Area_1.png)
+Assume we have a Room with only a breakable block which blocking the way and Wario should be able to break it to go accross. Now we represent the Room state using the vector below:
 $$
+A_{areaState}=
 \left(\begin{array} {c|c} 0 & 1 \end{array} \right)
 \tag{1.1.1}
 $$
 The left element of the vector represents the Wario's state (normal = 0; crouch = 1). The right element of the vector represents the hinder which blocks Wario away from the goal (hinder = 1; no hinder = 0). A normal state Wario should be able to B dash to break the block and remove the hinder, we use the operator below to represent the step:
 $$
+O_{BDash}=
 \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}
 \tag{1.1.2}
 $$
 Now we apply the operator on the Room state vector:
 $$
+A_{areaState}O_{BDash}=
 \left(\begin{array} {c|c} 0 & 1 \end{array} \right)
 \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}=
 \left(\begin{array} {c|c} 0 & 0 \end{array} \right)
@@ -33,10 +36,80 @@ $$
 $$
 Now we apply the B dash operator again on the result above:
 $$
+A_{areaState}O_{BDash}=
 \left(\begin{array} {c|c} 1 & 1 \end{array} \right)
 \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}=
 \left(\begin{array} {c|c} 0 & 1 \end{array} \right)
 \tag{1.1.5}
 $$
 Now we find the hinder is still there in the state vector.
-The example above is crappy and simple, you can find a lot of problem when try to expand its usage to all the cases of Wario Land 4 game. But now we have at least a new path to abstract the state of the Room hierarchically. We should only track the state of Wario, important enemy, switches and path, and use mathematics to represent and traverse all the possible cases.
+The example above is crappy and simple, you can find a lot of problem when try to expand its usage to all the cases of Wario Land 4 game. But now we have at least a new path to abstract the state of the Room hierarchically. We should only track the state of Wario, important enemy, switches and path, and use mathematics to represent and traverse all the possible cases. 
+
+## Tweak the First Idea
+We immediately realized a problem in previous method. A real Wario in WL4 has more than 2 states, we cannot create a vector or matrix operator to reset a specific element of a vector to a specific number. 
+![Image](PCG/1_The_Representation_of_Puzzles/1_1_Intro/images/Area_2.png)
+Assume we want to represent the room state of this Area of the picture above. 
+The state vector should be expand like this. Since Wario can only be in {normal, crouch, rolling} these 3 state. We use 3 elements for wario. And there are 2 hinders on the way. The first one only let Wario pass through when Wario is in {crouch, rolling} state, the second one is the breakable block on the way. So we use 2 hinder elements:
+$$
+A_{areaState}=
+\left(\begin{array} {c c c|c c} 1 & 0 & 0 & 1 & 1 \end{array} \right)
+\tag{1.1.6}
+$$
+Now we imitate the method above to find all the operators. First thing first, Wario can be only in one state, so the first 3 elements of the state vector should always have 2 zero and a one. So Wario state transformation matrix should be:
+$$
+W_{setNormal}=
+\begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
+                1 & 0 & 0 & 0 & 0 \\
+                1 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+\tag{1.1.7}
+$$
+$$
+W_{setCrouch}=
+\begin{pmatrix} 0 & 1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+\tag{1.1.8}
+$$
+$$
+W_{setRoll}=
+\begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+\tag{1.1.9}
+$$
+$A_{new}=A_{old}W$ can always work no matter what state Wario is on. Now we need to figure out the crawl operator and the rolling-attack operator, they should only work when Wario is on certain state.
+$$
+O_{crawl}=
+\begin{pmatrix} 0 & 0 & 0 & 0 & 0 \\
+                0 & 1 & 0 & -1 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+\tag{1.1.10}
+$$
+$$
+O_{rollAttack}=
+\begin{pmatrix} 0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 1 & -1 & -1 \\
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.10}
+$$
+The 2 matrix above looks fine, all $A_{new}=A_{old}WO$ calculation can work. But when we try to write the matrix, we find the first hinder should stop Wario from B-Dashing to break the second hinder. The 2 hinders are coupled. Theoretically, B-dash ba creak through the second hinder, but since there is a one-Tile16 tunnel in front of the breakable block. B-Dash operator can do nothing this time.
+$$
+O_{BDash}=
+\begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 1 & 1 \\  \end{pmatrix}
+\tag{1.1.11}
+$$
+But, it feels bad that BDash operator cannot always work to break a breakable block, so the method above needs more tweak or extra rules to work.
