@@ -61,8 +61,8 @@ W_{setNormal}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
                 1 & 0 & 0 & 0 & 0 \\
                 1 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.7}
 $$
 $$
@@ -70,8 +70,8 @@ W_{setCrouch}=
 \begin{pmatrix} 0 & 1 & 0 & 0 & 0 \\
                 0 & 1 & 0 & 0 & 0 \\
                 0 & 1 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.8}
 $$
 $$
@@ -79,8 +79,8 @@ W_{setRoll}=
 \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\
                 0 & 0 & 1 & 0 & 0 \\
                 0 & 0 & 1 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.9}
 $$
 $A_{new}=A_{old}W$ can always work no matter what state Wario is on. Now we need to figure out the crawl operator and the rolling-attack operator, they should only work when Wario is on certain state.
@@ -90,7 +90,7 @@ O_{crawl}=
                 0 & 1 & 0 & -1 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 1 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\  \end{pmatrix}
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.10}
 $$
 $$
@@ -108,8 +108,8 @@ O_{BDash-bad}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 1 & 1 \\  \end{pmatrix}
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.11}
 $$
 But, it feels bad that BDash operator cannot always work to break a breakable block, so the method above needs more tweak or extra rules to work. Let's try adding rules to the matrix calculation:
@@ -124,8 +124,8 @@ O_{BDash-better}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & -1 \\
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 0 & 0 \\
-                0 & 0 & 0 & 1 & 1 \\  \end{pmatrix}
+                0 & 0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.11}
 $$
-The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrix using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
+The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrix using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setCrouch}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
