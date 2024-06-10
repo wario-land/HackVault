@@ -104,7 +104,7 @@ O_{rollAttack}=
 $$
 The 2 matrix above looks fine, all $A_{new}=A_{old}WO$ calculation can work. But when we try to write the matrix, we find the first hinder should stop Wario from B-Dashing to break the second hinder. The 2 hinders are coupled. Theoretically, B-dash ba creak through the second hinder, but since there is a one-Tile16 tunnel in front of the breakable block. B-Dash operator can do nothing this time.
 $$
-O_{BDash}=
+O_{BDash-bad}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
@@ -112,4 +112,20 @@ O_{BDash}=
                 0 & 0 & 0 & 1 & 1 \\  \end{pmatrix}
 \tag{1.1.11}
 $$
-But, it feels bad that BDash operator cannot always work to break a breakable block, so the method above needs more tweak or extra rules to work.
+But, it feels bad that BDash operator cannot always work to break a breakable block, so the method above needs more tweak or extra rules to work. Let's try adding rules to the matrix calculation:
+\begin{itemize}
+    \item 1. We can only use certain operator when Wario is in certain state;
+    \item 2. Only certain condition match, then state change matrix can be used.
+\end{itemize}
+
+Let's take the B-Dash Operator and the previous case for example. $O_{BDash}$ can only be used when Wario is on normal state. And only when there is a standing place for Wario with at least 2 air Tile16 above the standing place, Wario can transform from crouch state to normal state. By applying the rules above, &W_{setNormal}& does not need to change and should always work, but $O_{BDash}$ needs a rewrite:
+$$
+O_{BDash-better}=
+\begin{pmatrix} 1 & 0 & 0 & 0 & -1 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 1 & 1 \\  \end{pmatrix}
+\tag{1.1.11}
+$$
+The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrix using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
