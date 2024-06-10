@@ -129,12 +129,13 @@ O_{BDash-better}=
 \tag{1.1.12}
 $$
 The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrices using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setCrouch}O_{crawl}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
-Then we find those &W& matrices needs some tweak too. The first hinder should reappear to be a hinder when wario transform to normal state. So the $W_{setNormal}$ becomes:
+
+Also, we found those $W$ matrices need some tweak too. The first hinder should re-appear to be a hinder when wario transform to normal state. So the $W_{setNormal}$ becomes:
 $$
 W_{setNormal-better}=
 \begin{pmatrix} 1 & 0 & 0 & 1 & 0 \\
-                1 & 0 & 0 & 0 & 0 \\
-                1 & 0 & 0 & 0 & 0 \\
+                1 & 0 & 0 & 1 & 0 \\
+                1 & 0 & 0 & 1 & 0 \\
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.13}
@@ -177,4 +178,30 @@ O_{rollAttack-better}=
                 0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.17}
 $$
-Okay, finally everything above becomes self-consistent.
+Okay, finally everything above becomes self-consistent. Almost... Ewww... Wait, what if we put a solid block on the right side of the area and let Wario be able to transform back to normal state then go back to do the rolling again? We have $A_{areaState-now}$ when Wario does the second rolling attempt:
+$$
+A_{areaState-now}=
+\left(\begin{array} {c c c|c c} 0 & 0 & 1 & 0 & 0 \end{array} \right)
+\tag{1.1.18}
+$$
+Then we try this:
+$$
+\begin{aligned}
+A_{areaState-new} &= A_{areaState-now}O_{rollAttack-better} \\
+                  &=
+\left(\begin{array} {c c c|c c} 0 & 0 & 1 & 0 & 0 \end{array} \right)
+\begin{pmatrix} 0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 1 & 0 & -1 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix} \\
+                  &=
+\left(\begin{array} {c c c|c c} 0 & 0 & 1 & 0 & -1 \end{array} \right)
+\end{aligned}
+\tag{1.1.19}
+$$
+An element in the state vector becomes negative one is ***bad***, we cannot tweak the $O_{rollAttack-better}$ once more to fix this problem. So we have to write down the third rule:
+\begin{itemize}
+    \item 3. Once the area which corresponding to our state vector has terrain change, we need to re-build the state vector, $W$ matrices and $O$ matrices.
+\end{itemize}
+All the things including switch-block-caused terrain changes, block breaking, etc. should be in this case.
