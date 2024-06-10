@@ -45,7 +45,7 @@ $$
 Now we find the hinder is still there in the state vector.
 The example above is crappy and simple, you can find a lot of problem when try to expand its usage to all the cases of Wario Land 4 game. But now we have at least a new path to abstract the state of the Room hierarchically. We should only track the state of Wario, important enemy, switches and path, and use mathematics to represent and traverse all the possible cases. 
 
-## Tweak the First Idea
+## Tweak the First Idea to make it self-consistent
 We immediately realized a problem in previous method. A real Wario in WL4 has more than 2 states, we cannot create a vector or matrix operator to reset a specific element of a vector to a specific number. 
 ![Image](PCG/1_The_Representation_of_Puzzles/1_1_Intro/images/Area_2.png)
 Assume we want to represent the room state of this Area of the picture above. 
@@ -55,7 +55,7 @@ A_{areaState}=
 \left(\begin{array} {c c c|c c} 1 & 0 & 0 & 1 & 1 \end{array} \right)
 \tag{1.1.6}
 $$
-Now we imitate the method above to find all the operators. First thing first, Wario can be only in one state, so the first 3 elements of the state vector should always have 2 zero and a one. So Wario state transformation matrix should be:
+Now we imitate the method above to find all the operators. First thing first, Wario can be only in one state, so the first 3 elements of the state vector should always have 2 zero and a one. So Wario state transformation matrices should be:
 $$
 W_{setNormal}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
@@ -102,7 +102,7 @@ O_{rollAttack}=
                 0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
 \tag{1.1.10}
 $$
-The 2 matrix above looks fine, all $A_{new}=A_{old}WO$ calculation can work. But when we try to write the matrix, we find the first hinder should stop Wario from B-Dashing to break the second hinder. The 2 hinders are coupled. Theoretically, B-dash ba creak through the second hinder, but since there is a one-Tile16 tunnel in front of the breakable block. B-Dash operator can do nothing this time.
+The 2 matrices above looks fine, all $A_{new}=A_{old}WO$ calculation can work. But when we try to write the matrix, we found the first hinder should stop Wario from B-Dashing to break the second hinder. The 2 hinders are coupled. Theoretically, B-dash ba creak through the second hinder, but since there is a one-Tile16 tunnel in front of the breakable block. B-Dash operator can do nothing this time.
 $$
 O_{BDash-bad}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & 0 \\
@@ -115,10 +115,10 @@ $$
 But, it feels bad that BDash operator cannot always work to break a breakable block, so the method above needs more tweak or extra rules to work. Let's try adding rules to the matrix calculation:
 \begin{itemize}
     \item 1. We can only use certain operator when Wario is in certain state;
-    \item 2. Only certain condition match, then state change matrix can be used.
+    \item 2. Only certain condition match, then state change matrices can be used.
 \end{itemize}
 
-Let's take the B-Dash Operator and the previous case for example. $O_{BDash}$ can only be used when Wario is on normal state. And only when there is a standing place for Wario with at least 2 air Tile16 above the standing place, Wario can transform from crouch state to normal state. By applying the rules above, &W_{setNormal}& does not need to change and should always work, but $O_{BDash}$ needs a rewrite:
+Let's take the B-Dash Operator and the previous case for example. $O_{BDash}$ can only be used when Wario is on normal state. And only when there is a standing place for Wario with at least 2 air Tile16 above the standing place, Wario can transform from crouch state to normal state. By applying the rules above, we know $O_{BDash}$ needs a rewrite:
 $$
 O_{BDash-better}=
 \begin{pmatrix} 1 & 0 & 0 & 0 & -1 \\
@@ -126,6 +126,55 @@ O_{BDash-better}=
                 0 & 0 & 0 & 0 & 0 \\
                 0 & 0 & 0 & 1 & 0 \\
                 0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
-\tag{1.1.11}
+\tag{1.1.12}
 $$
-The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrix using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setCrouch}O_{crawl}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
+The first hinder is the one-Tile16 tunnel, the second hinder is the breakable block. We want our $O_{BDash-better}$ to be static (we should be able to generate the matrices using pure logic and it should change as less as possible, for maintainence convenient). B dash should always break the block only when Wario is in normal state and there is a standing place for Wario to start B-Dashing. Also B-Dashing should never eliminate the one-Tile16 tunnel hinder. Since $A_{new}=A_{crouch-2-hinders}W_{setCrouch}O_{crawl}W_{setNormal}O_{BDash-better}$ is not applicable because there is no standing place in front of the breakable block.
+Then we find those &W& matrices needs some tweak too. The first hinder should reappear to be a hinder when wario transform to normal state. So the $W_{setNormal}$ becomes:
+$$
+W_{setNormal-better}=
+\begin{pmatrix} 1 & 0 & 0 & 1 & 0 \\
+                1 & 0 & 0 & 0 & 0 \\
+                1 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.13}
+$$
+Also the other 2:
+$$
+W_{setCrouch-better}=
+\begin{pmatrix} 0 & 1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.14}
+$$
+$$
+W_{setRoll-better}=
+\begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 1 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.15}
+$$
+Now they act like, the first hinder disappear when set Wario state to crouch or rolling. Then we rework the other 2 operator matrices:
+$$
+O_{crawl-better}=
+\begin{pmatrix} 0 & 0 & 0 & 0 & 0 \\
+                0 & 1 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.16}
+$$
+$$
+O_{rollAttack-better}=
+\begin{pmatrix} 0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 1 & 0 & -1 \\
+                0 & 0 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 0 & 1 \\  \end{pmatrix}
+\tag{1.1.17}
+$$
+Okay, finally everything above becomes self-consistent.
