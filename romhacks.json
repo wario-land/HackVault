@@ -717,6 +717,22 @@
         "tags": "PizzaTower",
         "difficulty": "Medium",
         "link": "https://github.com/becored/WL4_PT/releases/tag/v1.1"
+    },
+
+    {
+        "name": "Bonus Level",
+        "creator": "BenjaGames",
+        "date": 1722973700000,
+        "lastchange": 1722973700000,
+        "description": "A WL4 Hack that replaces Hall of Hieroglyphs (like all the other hacks) as a level with the style of a bonus pipe room.</br>This hack supports all three modes (Normal, Hard, S-Hard)</br>that's really all i can say besides it's fairly easy except for s-hard</br> which had to be tweaked multiple times so it's not that frustrating",
+        "completed": "true",
+        "rating": "?",
+        "filename": "WL4_BonusLevel.bps",
+        "videos": [],
+        "images": ["BonusLevel_SPOILER_image.png", "BonusLevel_SPOILER_image2.png"],
+        "tags": "Puzzle",
+        "difficulty": "Easy",
+        "link": ""
     }
 
 ]
