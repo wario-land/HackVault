@@ -1,0 +1,41 @@
+# 1.2 Temporal Elements Is the Original Point
+
+## Why this section deviates from the previous section
+After long time of thinking, from 2024 June to 2024 November, i tried to make a further step on the math stuff from the previous section. Since there are so many things coupled together, and i gradually feel it is more and more like a bad idea to try putting everything into matrix, and it feels like it is impossible to put everything into matrix calculation. Or, to say, new thing (i.e. the moment we think a game has creativity on design) won't emerge from matrix calculation. 
+
+Recently, I tried to return to the key of creativity, and found something more abstract which does not contain math, but i think it grab more essence of platforming game design. **Combine optional action types to pass through one or more obstacles, and use innovative point(s) on each obstacle, by gradually increasing the number of temporal elements.** 
+
+## temporal elements
+"Monism, dualism, pluralism" is a great topic, "The Three-Body Problem" is also a good topic, we won't touch them here. But i do put 3 concepts in one sentence... Let's start from the **temporal elements** first. 
+
+**temporal elements** including all the things from switch blocks, sprites or any other customized features added into the game by using patches which can change state over time or change on certain conditions. Also, all the states of a temporal element better be able to construct a Directed Cyclic Graph (DGC). A none-DGC **temporal elements** is likely to give player only one chance to use, can be only used in platforming game like smw, or in some one-shot bonus area. 
+
+## innovative point
+poeple use **innovative point** to make their games cooler. the idea can be classified into: replace terrain tile, reuse of one temporal elements, deceive players, hide something, collect element, marvellous spectacles. 
+
+## action types to pass through obstacle(s)
+In WL4, Wario can do these things to pass through obstacle(s), including **walk, crawl, B dash, R dash, jump, crawl jump. etc.** 
+
+## How to enumerate ideas using human brain
+Now the fun part begins, we can use the previous 3 things to enumerate new ideas with human brain. 
+
+Assume we have a new custom sprite which is a fetch-able block, and wario can throw it around. So, let's begin with only **one** fetch-able block in the room. Now we try to conbine **action type**, and ask ourselves: **what can we do with one fetch-able block to let wario need to walk and walk to pass one obstacle?** 
+
+Walk then Walk again sounds dumb, even the first walk happens on regular solid terrain, while the second walk happens on fetch-able block is not obvious enough to make something interesting. Okay, now let's ask ourselves the second question: **what can we do with one fetch-able block to let wario need to walk and crawl to pass one obstacle?** 
+
+Hey, this sounds much more interesting, if there is no ground, Wario cannot even crouch and crawl, so the fetch-able block can provide a ground to let wario change from walk state to crouch, then crawl. Then we use vanilla game features to create a situation to force wario to walk first then crouch and crawl in an area, and he cannot do anything else. It looks like this:
+![Image](PCG/1_The_Representation_of_Puzzles/1_2_Temporal_Elements_Is_the_Original_Point/images/Idea01.png) 
+Then what if **We use one fetch-able block to let wario need to walk and crawl to pass one obstacle, but the special block only be used in the second part?** After imagine, we get this: 
+![Image](PCG/1_The_Representation_of_Puzzles/1_2_Temporal_Elements_Is_the_Original_Point/images/Idea02.png) 
+Then the third question becomes: **what can we do with one fetch-able block to let wario need to walk and jump to pass one obstacle?** After imagine, we get this: 
+![Image](PCG/1_The_Representation_of_Puzzles/1_2_Temporal_Elements_Is_the_Original_Point/images/Idea03.png) 
+Okay, let's just stop here, i think readers can get my point, we just use one **temporal element** and "walk + crawl, walk + jump, walk + B dash, walk + R dash, walk + crawl jump, crawl + crawl jump. etc." after finishing all the combination of 2 actions, we can try combination of 3 actions, or go with **2 temporal element** then do everything again. keep going on then we have enough materials to go to the final step. 
+
+## Final step: use innovative point
+Trivial ideas won't be interesting enough, only when we merge those idea with **innovative points**, either make the game compact, suprising or aesthetically pleasing, players will like to play your levels. Talking the previous 3 ideas to make one example here. We apply "reuse of one temporal elements". How about **letting one fetch-able block drop from the sky, using switch blocks to let them stop falling and stay at the place to create the node to make the 3 different  obstacles passable?** After thinking, we get this (only the top one): 
+![Image](PCG/1_The_Representation_of_Puzzles/1_2_Temporal_Elements_Is_the_Original_Point/images/Idea04.png) 
+
+## return back to PCG?
+I believe, if AGI or some person want to write PCG logic in the future, the enumeration logic should follow this framework. Those ordinary methods to exhaust all the tile placing cases in a limited area are boring, and they cannot deal with **temporal elements**, especially customized **temporal elements** at all. I cannot imagine how people try to insert the properties of a customized **temporal elements** into a program to let it generate new game design ideas without exhaustive simulation in a high dimensional state space. 
+
+Even people are not going to use this article to make PCG program, it still provides a good framework to think, for people who want to make vanilla romhack or those who like using new patches to do something different. 
