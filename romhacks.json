@@ -733,6 +733,70 @@
         "tags": "Puzzle",
         "difficulty": "Easy",
         "link": ""
+    },
+
+    {
+        "name": "Blueprint Realm",
+        "creator": "Evbev",
+        "date": 1724169600000,
+        "lastchange": 1724169600000,
+        "description": "This level replaces Hall of Hieroglyphs, it is compatible with all 3 difficulties. The level has a lot of breakable walls hiding secrets and sometimes treasure chests, it also makes use of the climbable iron webs from Pinball Zone.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "BluePrintRealmFix.bps",
+        "videos": [],
+        "images": ["BluePrintRealmFix_image1.png"],
+        "tags": "Platforming, Single Level",
+        "difficulty": "Medium",
+        "link": ""
+    },
+
+    {
+        "name": "Mysterious Manor",
+        "creator": "Evbev",
+        "date": 1724947200000,
+        "lastchange": 1724947200000,
+        "description": "invalid",
+        "completed": "true",
+        "rating": "?",
+        "filename": "MysteriousManor.bps",
+        "videos": [],
+        "images": ["MysteriousManor_image1.png"],
+        "tags": "Platforming, Single Level",
+        "difficulty": "Medium",
+        "link": ""
+    },
+
+    {
+        "name": "Wario's Amazing Heist",
+        "creator": "Swosh",
+        "date": 1725724800000,
+        "lastchange": 1725724800000,
+        "description": "invalid",
+        "completed": "false",
+        "rating": "?",
+        "filename": "WariosAmazingHeist.bps",
+        "videos": [],
+        "images": ["WariosAmazingHeist_image1.png"],
+        "tags": "Platforming",
+        "difficulty": "Medium",
+        "link": ""
+    },
+
+    {
+        "name": "Seaside Ruins",
+        "creator": "Evbev, BenjaGames",
+        "date": 1730304000000,
+        "lastchange": 1730304000000,
+        "description": "Benja made the level layout and I decorated and polished it, also this is my first time doing a custom sky for a level.",
+        "completed": "true",
+        "rating": "?",
+        "filename": "SeasideRuins.bps",
+        "videos": [],
+        "images": ["SeasideRuins_image1.png"],
+        "tags": "Platforming",
+        "difficulty": "Medium",
+        "link": ""
     }
 
 ]
