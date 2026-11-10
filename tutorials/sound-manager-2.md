@@ -255,7 +255,7 @@ In MuseScore:
 
 The result is a preview, not a recording of the GBA hardware. PSG parts will be missing or approximated. ADSR and loops may not match the game.
 
-The exported `.mid` is format 0 and is deliberately simplified. It stops at `GOTO`, skips some pattern/repeat commands, and cannot represent key-split/drum voice graphs exactly.
+The exported `.mid` is format 0 and is deliberately simplified. It ignores `GOTO` jumps and keeps scanning linearly, skips some pattern/repeat commands, and cannot represent key-split/drum voice graphs exactly.
 
 ### 3.3 Why you cannot just import the MIDI back
 

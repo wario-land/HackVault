@@ -425,7 +425,7 @@ Current behavior:
 
 + format 0 MIDI;
 + waits, notes, tempo, program, and some controllers;
-+ stops at `GOTO`;
++ ignores `GOTO` entirely and keeps scanning the remaining byte stream;
 + skips `PATT`, `REPT`, `MEMACC`, and running-status-only details;
 + does not represent PSG, key-split/drum graphs, or GBA ADSR;
 + is not imported by the Sound Manager.

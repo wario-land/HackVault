@@ -1,7 +1,7 @@
 # Other things in RoomHeader: Tileset, CameraControlType and BGMVolume.
 
 ## Introduction
-I want to make the tutorials not that tedious. And i want to feed the things to some future AI or someone who want to rewrite WL4Editor. so I want to talk about the underlayer things more about the game and assume people have used WL4Editor, read documents like GBATEK, know how to program and have basic reverse engineering knowledge on GBA game, know how to read WL4Editor's source code and know how to grind the `wario4land_gba_ique` leak. (20240420 -- ssp)
+I want to make the tutorials not that tedious. And i want to feed the things to some future AI or someone who want to rewrite WL4Editor. so I want to talk about the underlayer things more about the game and assume people have used WL4Editor, read documents like GBATEK, know how to program and have basic reverse engineering knowledge on GBA game, know how to read WL4Editor's source code and know how to study the game's data. (20240420 -- ssp)
   
 since Tileset, CameraControlType and BGMVolume are some trivial stuff in the RoomHeader, i don't have a lot of things to share about them, so i put all the things i can rememeber here to show my ideas before i forget after decades.
 
@@ -17,4 +17,4 @@ The `struct __CameraControlRecord` and `enum __CameraControlType` can be found i
   
 This could be a working parameter in the RoomHeader in a period of time when the game was in developing, but i believe it got discarded at last. iirc, in some `Levels`, if you change the original value of `BGMVolume` in `Room Config Dialog` they can work when Wario entering the first `Room`. In some other `Levels` they even completely cannot work. Another thing worth a mention, in those `Levels` when the `BGMVolume` can work at first, if you pause the game the unpause, then you will find the regression of the runtime bgm volume.
   
-If you have read the `wario4land_gba_ique` leak or have used GBA game music editor `sappy` before, you may know you can set volume for bgm in the GBA's asm format for midi. The game misses some logic to force the runtime song be played in `BGMVolume` set in `RoomHeader`. i tried but didn't find easy way to implement the feature using patches. perhaps someone can do it in the future to let `BGMVolume` truely work.
+If you have studied the game's sound data or have used the GBA music editor `sappy` before, you may know you can set volume for bgm in the GBA's asm format for midi. The game misses some logic to force the runtime song be played in `BGMVolume` set in `RoomHeader`. i tried but didn't find easy way to implement the feature using patches. perhaps someone can do it in the future to let `BGMVolume` truely work.

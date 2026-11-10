@@ -6,7 +6,7 @@ Things about how the layer being drawn and you can assign one `Event ID` and one
   
 ## The RoomHeader struct in Wario Land 4
   
-We know that, the game is developed using C programming language. And we developed the `WL4Editor` using Qt with C++. So if you're not familiar with reverse engineering, and you want to have a first look on how all kinds of data in WL4 ROM looks like. This source code of `WL4Editor` is a good place to start from. ( the leaked source of iQue version of WL4 is full of romaji and Japanese comments in the code, some other stuff are just o files, so we should always try to use `WL4Editor` first before some powerful AI can do everything for us perfectly. ) This time, let's start from the `RoomHeader` struct. We can find the struct from the `WL4Editor` source code ( i renamed some variables ).
+We know that, the game is developed using C programming language. And we developed the `WL4Editor` using Qt with C++. So if you're not familiar with reverse engineering, and you want to have a first look on how all kinds of data in WL4 ROM looks like. This source code of `WL4Editor` is a good place to start from. ( some original development material is full of romaji and Japanese comments, and some of it is only object files, so `WL4Editor` is usually the better starting point. ) This time, let's start from the `RoomHeader` struct. We can find the struct from the `WL4Editor` source code ( i renamed some variables ).
 ```
 struct __RoomHeader
 {
@@ -36,7 +36,7 @@ im not going to explain what is a Tileset, it is self-evident in `WL4Editor`. Le
 
 ## Layer's mapping type
 
-These are the mapping type relative value we can found from the leak. I renamed everything and rewrite the comment in English:
+These are the mapping type relative values we can find in the game data. I renamed everything and rewrite the comment in English:
 ```
 enum mapping_type
 {
